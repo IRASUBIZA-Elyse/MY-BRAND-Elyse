@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@500&family=Syne&family=Syne+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +25,7 @@ body {
   max-width: 1500px;
   margin: auto;
   padding: 0 30px;
+  overflow: hidden;
 }
 
 /* Navbar */
@@ -31,6 +34,8 @@ body {
   background: #1e1e1e;
   color: white;
   position: sticky;
+  top: 0;
+  z-index: 1;
   padding: 1rem;
 }
 
@@ -38,7 +43,14 @@ body {
   display: flex;
   justify-content: space-between;
 }
-
+.Logo {
+  padding: 0.5rem;
+  font-size: 20px;
+}
+.Login {
+  padding: 0.5rem;
+  font-size: 20px;
+}
 .navbar ul {
   display: flex;
   align-items: center;
@@ -48,8 +60,9 @@ body {
 .navbar ul li a {
   color: #fff;
   padding: 1rem;
-  margin: 0 0.25rem;
+  margin: 0 0.15rem;
   text-decoration: none;
+  font-size: 15px;
 }
 #navbar .navbar ul li a:hover {
   color: #a6a001;
@@ -73,41 +86,48 @@ body {
 }
 
 #home .container .full_stack {
-  margin-top: 100px;
+  margin: 150px;
   max-width: 50%;
 }
 #home .container .full_stack .hey {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 100;
   margin-bottom: 50px;
 }
 #home .container .full_stack .elyse {
-  margin-bottom: 50px;
-  font-size: 60px;
+  margin-bottom: 40px;
+  font-size: 40px;
 }
 #home .container .full_stack .full {
   margin-top: 50px;
-  font-size: 35px;
+  font-size: 25px;
 }
 #home .container .full_stack .knowledge {
   margin-top: 20px;
-  font-size: 21px;
+  font-size: 15px;
 }
 .img img {
-  width: 500px;
-  height: 600px;
+  margin-top: -50px;
+  width: 550px;
+  height: auto;
+  transform: rotate(8.42deg);
+  border-radius: 309px;
 }
 /* about me */
 #About_Me {
-  /* box-shadow: 0 5px 15px #a6a1017c; */
-  padding-bottom: 50px;
-  background: linear-gradient(180deg, #a6a001 0%, rgba(0, 0, 0, 0) 6.5%);
+  border: 1px solid rgba(180, 180, 180, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(166, 160, 1, 0.1) 0%,
+    rgba(0, 0, 0, 0) 6.5%
+  );
 }
 .about-me {
   color: white;
   display: flex;
   justify-content: space-between;
-  padding-top: 100px;
+  padding-top: 50px;
+  margin-bottom: 50px;
 }
 .develop {
   width: 50%;
@@ -117,29 +137,118 @@ body {
   justify-content: space-between;
   border-radius: 6px;
   background: #1e1e1e;
+  width: 400px;
+  flex-shrink: 0;
   box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.25);
-  padding: 30px;
-  font-size: 25px;
-  margin-right: 150px;
-  margin-bottom: 20px;
+  padding: 20px;
+  font-size: 20px;
+  margin-right: 100px;
+  margin-left: 150px;
 }
 .mgT {
-  margin-top: 130px;
-  margin-bottom: 100px;
+  margin-top: 120px;
+  margin-bottom: 50px;
 }
 .Fullstack_developer a {
-  color: #fff;
+  color: #a6a001;
   margin-top: 20px;
 }
 
 .about {
-  font-size: 40px;
+  font-size: 30px;
   width: 50%;
 }
 .experienced {
-  font-size: 30px;
+  font-size: 15px;
+  font-family: "Roboto Serif", serif;
   font-weight: 50;
   line-height: 30px;
   width: 600px;
-  padding-top: 40px;
+  padding-top: 50px;
+  padding-right: 30px;
+}
+/* skills */
+
+#skills {
+  background: rgba(55, 55, 52, 0.253);
+  box-shadow: 0 4px 15px #a6a10193;
+}
+.skill1 {
+  text-align: center;
+  font-size: 50px;
+  padding: 50px;
+}
+.skills {
+  display: flex;
+  justify-content: space-between;
+}
+.skillPar {
+  border: #1e1e1e;
+  width: 450.013px;
+  height: 450.567px;
+  flex-shrink: 0;
+  background-color: #1e1e1e;
+  stroke-width: 1px;
+  stroke: #1e1e1e;
+  padding: 80px 60px;
+  border-radius: 35px;
+  margin-left: 200px;
+  line-height: 80px;
+}
+
+.skills-words {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 126%; /* 25.2px */
+}
+.skills-words a {
+  color: #a6a001;
+}
+.btn {
+  margin-top: 90px;
+  display: flex;
+  border: none;
+  width: 200px;
+  height: 35.74px;
+  padding: 18.667px 42.667px;
+  justify-content: center;
+  align-items: center;
+  gap: 10.667px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #a6a001;
+  line-height: 150%;
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  cursor: pointer;
+}
+.langauge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 40px;
+  margin-right: 10px;
+}
+.logoName {
+  font-size: 20px;
+}
+.skillSide {
+  transform: rotate(-90deg);
+  /* color: #fff; */
+  font-family: Poppins;
+  font-size: 65.649px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 126%; /* 82.718px */
+  text-transform: uppercase;
+  color: rgba(55, 55, 52, 0.507);
+  margin-top: 200px;
+}
+.svg {
+  width: 47px;
+  height: 52px;
 }
