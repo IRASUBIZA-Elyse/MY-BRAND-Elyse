@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@500&family=Syne&family=Syne+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Syne", sans-serif;
+  line-height: 1.4;
+}
+/* Navbar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  /* height: 120px; */
+  flex-shrink: 0;
+  background: #1e1e1e;
+  color: white;
+  position: sticky;
+  padding: 1rem;
+}
+.text_primary {
+  color: #a6a001;
+}
+#navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+#navbar ul li a {
+  color: #fff;
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+}
