@@ -39,17 +39,18 @@ html {
   top: 0;
   z-index: 1;
   padding: 1rem;
+  /* width: 100%; */
 }
 .navbar {
   display: flex;
   justify-content: space-between;
 }
 .Logo {
-  padding: 0.5rem;
-  font-size: 20px;
+  padding: 12px;
+  font-size: 25px;
 }
 .Login {
-  padding: 0.5rem;
+  padding: 12px;
   font-size: 20px;
 }
 .navbar ul {
@@ -60,8 +61,8 @@ html {
 
 .navbar ul li a {
   color: #fff;
-  padding: 1rem;
-  margin: 0 0.15rem;
+  padding: 10px;
+  margin: 0 3px;
   text-decoration: none;
   font-size: 15px;
 }
@@ -76,6 +77,26 @@ html {
   cursor: pointer;
 }
 /* login button */
+
+.arrow_btnLogin {
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.arrow_btnLogin .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: -20.7%;
+  padding-bottom: 6px;
+  padding-right: 5px;
+}
+
+/* other buttons */
 .arrow_btn {
   color: white;
   text-align: center;
@@ -84,12 +105,12 @@ html {
   align-items: center;
   cursor: pointer;
 }
-.text {
+.arrow_btn .text {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  left: -3.7%;
+  left: -2.7%;
   padding-bottom: 6px;
   padding-right: 5px;
 }
@@ -101,6 +122,9 @@ html {
   padding-top: 3px;
   /* padding-left: 10px; */
 }
+.menu {
+  display: none;
+}
 
 /* home page */
 #home {
@@ -110,11 +134,12 @@ html {
 .home {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 #home .container .full_stack {
-  margin: 150px;
-  max-width: 50%;
+  margin: 150px auto;
+  max-width: 40%;
 }
 #home .container .full_stack .hey {
   font-size: 20px;
@@ -132,34 +157,41 @@ html {
 
 .homeArrowBtn {
   padding-top: 100px;
-  padding-right: 200px;
+  padding: auto 200px;
 }
 #home .container .full_stack .knowledge {
   margin-top: 20px;
   font-size: 15px;
 }
 .img img {
-  margin-top: -50px;
   width: 550px;
   height: auto;
   transform: rotate(8.42deg);
   border-radius: 309px;
+  margin: auto;
+}
+.img {
+  width: clamp(200px, 60%, 550px);
+  height: auto;
+  margin: 0 auto;
 }
 /* about me */
 #About_Me {
   border: 1px solid rgba(180, 180, 180, 0);
   background: linear-gradient(to right, #a6a1011f, #000);
 }
+.aboutTitle {
+  text-align: center;
+  font-size: 50px;
+  padding: 50px;
+}
 .about-me {
   color: white;
   display: flex;
   justify-content: space-between;
-  padding-top: 50px;
   margin-bottom: 50px;
 }
-.develop {
-  width: 50%;
-}
+
 .Fullstack_developer {
   display: flex;
   justify-content: space-between;
@@ -174,7 +206,6 @@ html {
   margin-left: 150px;
 }
 .mgT {
-  margin-top: 120px;
   margin-bottom: 50px;
 }
 .Fullstack_developer a {
@@ -192,13 +223,12 @@ html {
   font-weight: 50;
   line-height: 30px;
   width: 600px;
-  padding-top: 50px;
+  /* padding-top: 50px; */
   padding-right: 30px;
 }
 .contact-btn {
   font-size: 15px;
   padding-right: 15px;
-  /* margin-right: 30px; */
   position: relative;
   left: -9%;
   cursor: pointer;
@@ -210,7 +240,6 @@ html {
 .contact-btnArrow {
   width: 15px;
   height: 15px;
-  /* padding-right: 2px; */
 }
 
 /* skills */
@@ -370,15 +399,19 @@ html {
   display: flex;
   justify-content: flex-start;
 }
+.projectExamples {
+  margin: auto;
+}
 .projectNavBar {
-  display: inline-flex;
-  padding: 20px;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: space-around;
+  padding: 20px;
   border-radius: 15px;
   background: #1e1e1e;
   height: 50px;
-  margin-left: 250px;
+  margin: auto auto 20px;
+  width: fit-content;
 }
 .projectNavBar ul {
   display: flex;
@@ -391,6 +424,22 @@ html {
 .projectNavBar ul li:hover {
   color: #a6a001;
   cursor: pointer;
+}
+
+.photoProject {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+/* .projectImage img:hover {
+  width: 103%;
+  transition: 0.9s ease-in-out;
+  z-index: 3;
+} */
+.titleImage {
+  position: relative;
+  top: -15%;
+  left: 3%;
 }
 
 /* blogs */
@@ -542,4 +591,113 @@ ul {
   text-align: centre;
   justify-content: center;
   font-size: 12.5px;
+}
+
+@media screen and (max-width: 785px) {
+  .navbar ul {
+    display: none;
+  }
+  .arrow_btnLogin {
+    display: none;
+  }
+  .menu {
+    display: block;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container {
+    max-width: 650px;
+    margin: auto;
+    padding: 0 8px;
+    overflow: hidden;
+  }
+
+  .Logo {
+    padding: 0.5rem;
+    font-size: 20px;
+  }
+  .arrow_btnLogin {
+    display: none;
+  }
+  .navbar ul li a {
+    display: none;
+  }
+  .menu {
+    display: block;
+    cursor: pointer;
+  }
+  /* home */
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #home .container .full_stack {
+    text-align: center;
+    margin: 8px;
+    max-width: 70%;
+  }
+  #home .container .full_stack .hey {
+    font-size: 13px;
+    font-weight: 100;
+    margin-top: 25px;
+    margin-bottom: 40px;
+  }
+  #home .container .full_stack .elyse {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  #home .container .full_stack .full {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  .homeArrowBtn {
+    padding-top: 10px;
+    padding-right: 20px;
+  }
+  #home .container .full_stack .knowledge {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+  .img img {
+    margin: auto;
+    width: 280px;
+    height: auto;
+    transform: rotate(8.42deg);
+    border-radius: 309px;
+  }
+
+  /* about me */
+  .aboutTitle {
+    font-size: 25px;
+    padding: 25px;
+  }
+  .Fullstack_developer {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    padding: 3px 15px;
+  }
+  .ngt .svgAboutMe {
+    width: 30px;
+  }
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .experienced {
+    font-size: 15px;
+    font-family: "Roboto Serif", serif;
+    font-weight: 50;
+    line-height: 30px;
+    width: 400px;
+    /* padding-top: 50px; */
+    padding-right: 30px;
+  }
 }

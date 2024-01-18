@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="./style.css" />
+    <!-- <link rel="stylesheet" media="screen and (max-width: 760px)" href="./mobile.css"> -->
   </head>
   <body>
     <nav id="navbar">
@@ -22,7 +23,7 @@
           <li><a href="#Blogs">Blogs</a></li>
           <li><a href="#Contact_Me">Contact Me</a></li>
         </ul>
-        <div class="arrow_btn">
+        <div class="arrow_btnLogin">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="42"
@@ -53,6 +54,9 @@
             </p>
           </div>
         </div>
+        <div class="menu"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+          <path d="M0 5.25V8.75H35V5.25H0ZM0 15.75V19.25H35V15.75H0ZM0 26.25V29.75H35V26.25H0Z" fill="#A6A001"/>
+        </svg></div>
       </div>
     </nav>
 
@@ -107,6 +111,7 @@
 
     <!-- about me -->
     <section id="About_Me">
+      <h2 class="aboutTitle">About <span class="text_primary">Me</span></h2>
       <div class="container about-me">
         <div class="develop">
           <div class="mgT Fullstack_developer">
@@ -116,7 +121,7 @@
               <a href="#projects"><span class="text_primary">Projects</span></a>
             </p>
             <div>
-              <svg
+              <svg class="svgAboutMe"
                 xmlns="http://www.w3.org/2000/svg"
                 width="50"
                 height="50"
@@ -139,7 +144,7 @@
               >
             </p>
             <div>
-              <svg
+              <svg class="svgAboutMe"
                 xmlns="http://www.w3.org/2000/svg"
                 width="50"
                 height="50"
@@ -155,7 +160,6 @@
           </div>
         </div>
         <div class="about">
-          <h2>About <span class="text_primary">Me</span></h2>
           <p class="experienced">
             Experienced software developer with a Dedication of pushing the
             boundaries of innovation and A natural problem solver who enjoys
@@ -550,25 +554,57 @@
             </ul>
           </div>
           <div class="photoProject">
-            <div class="projectDemo">
-              <picture>
-                <img src="./img/website designing.png" alt="web design">
-              </picture>
-              <picture>
+            
+              <div class="projectImage">
+                <img src="./img/web des.png" alt="web design">
+                <p class="titleImage">Api</p>
+              </div>
+      
+              <div class="projectImage">
+                <img src="./img/web dev.png" alt="">
+                <p class="titleImage">Web design</p>
+              </div>
+
+              <div class="projectImage">
                 <img src="./img/iot prototype.png" alt="">
-              </picture>
-            </div>
-          </div>
-          <div class="photoProject">
-            <div class="projectDemo">
-              <picture>
-                <img src="./img/web development.png" alt="">
-              </picture>
-              <picture>
+                <p class="titleImage">Web develop</p>
+              </div>
+              <div class="projectImage">
                 <img src="./img/branding.png" alt="">
-              </picture>
+                <p class="titleImage">Iot</p>
+              </div>
+          </div>
+          <div class="arrow_btn mgContact">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="42"
+              viewBox="0 0 42 42"
+              fill="none"
+            >
+              <circle cx="18" cy="18" r="18" fill="#A6A001" />
+            </svg>
+            <div class="text">
+              <p class="viewAllProject-btn"><a href="#Contact_Me">View All project</a></p>
+              <svg
+                class="contact-btnArrow"
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 20 20"
+                fill="none"
+                class="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M3.49865 3.82178L9.67698 10.0001L3.49865 16.1784L2.32031 15.0001L7.32031 10.0001L2.32031 5.00011L3.49865 3.82178Z"
+                  fill="white"
+                />
+              </svg>
             </div>
           </div>
+          
         </div>
         
       </div>
@@ -617,6 +653,7 @@
             </div>
           </div>
         </div>
+        
       </div>
     </section>
     <!-- contact Me -->
