@@ -12,6 +12,9 @@ body {
   background-color: #000;
   color: white;
 }
+html {
+  scroll-behavior: smooth;
+}
 /* global */
 
 .text_primary {
@@ -325,6 +328,14 @@ body {
 #projects {
   padding-bottom: 100px;
 }
+#portofolio-title {
+  text-align: center;
+  font-size: 45px;
+  padding: 50px;
+  padding-top: 30px;
+  color: #a6a001;
+  font-weight: 900;
+}
 .project {
   display: flex;
   justify-content: space-between;
@@ -338,10 +349,9 @@ body {
   width: 300px;
   height: 380px;
 }
-/* .project .svgBox {
-  height: 190px;
-  background-color: #1e1e1e;
-} */
+.projectDemo {
+  margin-top: 20px;
+}
 .svgProject {
   width: 80px;
   height: 80px;
@@ -439,19 +449,24 @@ body {
   font-size: 40px;
   font-weight: 900;
 }
+.contact {
+  display: flex;
+  justify-content: center;
+}
 .contact form {
   width: 600px;
   text-align: center;
+  margin-top: 15px;
 }
 form .input-box {
   display: flex;
   justify-content: space-between;
 }
 .field .item {
-  width: 100%;
-  padding: 18px;
+  width: 280px;
+  padding: 18px 35px;
   background: transparent;
-  border: 2px solid #a6a001;
+  border: 1px solid #a6a001;
   outline: none;
   border-radius: 6px;
   font-size: 16px;
@@ -459,21 +474,28 @@ form .input-box {
   margin: 12px 0;
   background-color: #fff;
 }
+.field .itemMessage {
+  width: 100%;
+  padding: 18px;
+  outline: none;
+  border: 1px solid #a6a001;
+  border-radius: 6px;
+}
+.padding-label {
+  margin-right: 20px;
+}
 .submitbtn {
-  /* margin-top: 90px; */
-  display: flex;
+  margin-top: 15px;
   border: none;
   width: 200px;
   height: 35.74px;
-  padding: 18.667px 42.667px;
-  justify-content: center;
+  padding-top: 4px;
   align-items: center;
-  gap: 10.667px;
   flex-shrink: 0;
   border-radius: 8px;
   background: #a6a001;
-  line-height: 150%;
   font-size: 15px;
+  padding-bottom: 5px;
   font-weight: 400;
   color: #fff;
   cursor: pointer;

@@ -18,7 +18,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#About_Me">About Me</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#Portfolio">Portfolio</a></li>
+          <li><a href="#portofolio-title">Portfolio</a></li>
           <li><a href="#Blogs">Blogs</a></li>
           <li><a href="#Contact_Me">Contact Me</a></li>
         </ul>
@@ -172,7 +172,7 @@
               <circle cx="18" cy="18" r="18" fill="#A6A001" />
             </svg>
             <div class="text">
-              <p class="contact-btn"><a href="#Contact-Me">Contact Me</a></p>
+              <p class="contact-btn"><a href="#Contact_Me">Contact Me</a></p>
               <svg
                 class="contact-btnArrow"
                 xmlns="http://www.w3.org/2000/svg"
@@ -534,11 +534,11 @@
 
     <!-- projects -->
     <section id="projects">
+      <p id="portofolio-title">portofolio
+      </p>
       <div class="ProjectWindow">
         <div class="sidebar">
-          <div>
             <p class="partIcon">projects</p>
-          </div>
         </div>
         <div class="projectExamples">
           <div class="projectNavBar">
@@ -549,9 +549,28 @@
               <li>iot prototype</li>
             </ul>
           </div>
-          <div class="projectDemo"></div>
+          <div class="photoProject">
+            <div class="projectDemo">
+              <picture>
+                <img src="./img/website designing.png" alt="web design">
+              </picture>
+              <picture>
+                <img src="./img/iot prototype.png" alt="">
+              </picture>
+            </div>
+          </div>
+          <div class="photoProject">
+            <div class="projectDemo">
+              <picture>
+                <img src="./img/web development.png" alt="">
+              </picture>
+              <picture>
+                <img src="./img/branding.png" alt="">
+              </picture>
+            </div>
+          </div>
         </div>
-        <div class="photoProject"></div>
+        
       </div>
     </section>
     <!-- blogs -->
@@ -609,6 +628,7 @@
         <form action="#">
           <div class="input-box">
             <div class="input-field field">
+              <p class="padding-label">First name</p>
               <input
                 type="text"
                 name=""
@@ -618,6 +638,7 @@
               />
             </div>
             <div class="input-field field">
+              <p class="padding-label">Last name</p>
               <input
                 type="text"
                 name=""
@@ -630,6 +651,7 @@
   
           <div class="input-box">
             <div class="input-field field">
+              <p class="padding-label">Email Address</p>
               <input
                 type="text"
                 name=""
@@ -639,6 +661,7 @@
               />
             </div>
             <div class="input-field field">
+              <p class="padding-label">Phone number</p>
               <input
                 type="text"
                 name=""
@@ -649,13 +672,14 @@
             </div>
           </div>
           <div class="textarea-field field">
+            <p class="padding-label">Message</p>
             <textarea
               name=""
               id="message"
               cols="30"
               rows="10"
               placeholder="Your Message"
-              class="item"
+              class="itemMessage"
             ></textarea>
           </div>
           <button class="submitbtn" type="submit">Submitt</button>
