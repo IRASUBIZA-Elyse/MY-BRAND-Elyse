@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #101113;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-container {
+  background-color: #1c1a1a;
+  padding: 20px 32px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  height: 60%;
+}
+h2 {
+  text-align: center;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+.input-group input {
+  padding: 10px 10px 10px 40px;
+  width: 100%;
+  border: 1px solid #4b4b4b;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: #4b4b4b;
+  color: white;
+}
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+.login-form button {
+  background-color: #a6a001;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.login-form button:hover {
+  background-color: #e6b800;
+}
+.check {
+  margin-right: 20px;
+}
+.login-form .checkbox-container {
+  display: flex;
+  align-items: center;
+  /* margin: 10px 0; */
+  justify-content: space-between;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.login-form .checkbox-container input {
+  margin-right: 5px;
+}
+.login-form .login-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+.login-form {
+  text-align: center;
+  margin-top: 10px;
+}
+.input-group svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #aaa;
+  width: 20px;
+  height: 20px;
+}
+.sign-up-link {
+  text-align: start;
+  margin-top: 10px;
+  font-size: 12px;
+}
+a {
+  text-decoration: none;
+  color: #a6a001;
+}

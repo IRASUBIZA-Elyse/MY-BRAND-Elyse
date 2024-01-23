@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- <link rel="stylesheet" media="screen and (max-width: 760px)" href="./mobile.css"> -->
   </head>
   <body>
@@ -18,42 +18,46 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#About_Me">About Me</a></li>
-          <li><a href="#skills">Skills</a></li>
+          <li><a href="index.html/#skills">Skills</a></li>
           <li><a href="#portofolio-title">Portfolio</a></li>
-          <li><a href="#Blogs">Blogs</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
           <li><a href="#Contact_Me">Contact Me</a></li>
+          <li>
+            <a class="arrow_btnLogin" href="logIn.html"><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="42"
+              viewBox="0 0 42 42"
+              fill="none"
+            >
+              <circle cx="18" cy="18" r="18" fill="#A6A001" />
+            </svg>
+            <div class="text">
+              <p>Login</p>
+              <p class="padding">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  class="icon"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.49865 3.82178L9.67698 10.0001L3.49865 16.1784L2.32031 15.0001L7.32031 10.0001L2.32031 5.00011L3.49865 3.82178Z"
+                    fill="white"
+                  />
+                </svg>
+              </p>
+            </div>
+            </a>
+            
+           
+          </li>
         </ul>
-        <div class="arrow_btnLogin">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="42"
-            height="42"
-            viewBox="0 0 42 42"
-            fill="none"
-          >
-            <circle cx="18" cy="18" r="18" fill="#A6A001" />
-          </svg>
-          <div class="text">
-            <p>Login</p>
-            <p class="padding">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 20 20"
-                fill="none"
-                class="icon"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M3.49865 3.82178L9.67698 10.0001L3.49865 16.1784L2.32031 15.0001L7.32031 10.0001L2.32031 5.00011L3.49865 3.82178Z"
-                  fill="white"
-                />
-              </svg>
-            </p>
-          </div>
-        </div>
+        
         <div class="menu"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
           <path d="M0 5.25V8.75H35V5.25H0ZM0 15.75V19.25H35V15.75H0ZM0 26.25V29.75H35V26.25H0Z" fill="#A6A001"/>
         </svg></div>
@@ -104,7 +108,7 @@
           <div class="about_me_btn"></div>
         </div>
         <div class="img">
-          <img src="./20240116_131013.png" alt="myself" />
+          <img src="./img/20240116_131013.png" alt="myself" />
         </div>
       </div>
     </section>
@@ -555,10 +559,9 @@
               <li>iot prototype</li>
             </ul>
           </div>
-          <div class="photoProject">
-            
+          <div class="photoProject"> 
               <div class="projectImage1">
-                <img src="./img/web des.png" alt="web design">
+                <img src="./img/branding.png" alt="web design" class="pic1">
                 <p class="titleImage">Api</p>
                 <p class="directBtn"><svg xmlns="http://www.w3.org/2000/svg" width="69" height="62" viewBox="0 0 69 62" fill="none">
                   <g filter="url(#filter0_b_1_191)">
@@ -576,8 +579,8 @@
                 </svg></p>
               </div>
       
-              <div class="projectImage">
-                <img src="./img/web dev.png" alt="">
+              <div class="projectImage2">
+                <img src="./img/web dev.png" alt="" class="pic2">
                 <p class="titleImage">Web design</p>
                 <p class="directBtn"><svg xmlns="http://www.w3.org/2000/svg" width="69" height="62" viewBox="0 0 69 62" fill="none">
                   <g filter="url(#filter0_b_1_191)">
@@ -594,44 +597,43 @@
                   </defs>
                 </svg></p>
               </div>
-          </div>
-          <div class="photoProject">
-              <div class="projectImage">
-                <img src="./img/iot prototype.png" alt="">
-                <p class="titleImage">Web develop</p>
-                <p class="directBtn"><svg xmlns="http://www.w3.org/2000/svg" width="69" height="62" viewBox="0 0 69 62" fill="none">
-                  <g filter="url(#filter0_b_1_191)">
-                    <ellipse cx="34.192" cy="31" rx="34.192" ry="31" fill="white" fill-opacity="0.4"/>
-                  </g>
-                  <path d="M44.0551 22.0577L25.4893 22.0577L25.4603 25.0297L38.4564 25.0297L24.3289 37.8382L26.6497 39.9423L40.7771 27.1338V38.9166L44.0551 38.8903L44.0551 22.0577Z" fill="white"/>
-                  <defs>
-                    <filter id="filter0_b_1_191" x="-50" y="-50" width="168.384" height="162" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feGaussianBlur in="BackgroundImageFix" stdDeviation="25"/>
-                      <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_191"/>
-                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_191" result="shape"/>
-                    </filter>
-                  </defs>
-                </svg></p>
-              </div>
-              <div class="projectImage1">
-                <img src="./img/branding.png" alt="">
-                <p class="titleImage">Iot</p>
-                <p class="directBtn"><svg xmlns="http://www.w3.org/2000/svg" width="69" height="62" viewBox="0 0 69 62" fill="none">
-                  <g filter="url(#filter0_b_1_191)">
-                    <ellipse cx="34.192" cy="31" rx="34.192" ry="31" fill="white" fill-opacity="0.4"/>
-                  </g>
-                  <path d="M44.0551 22.0577L25.4893 22.0577L25.4603 25.0297L38.4564 25.0297L24.3289 37.8382L26.6497 39.9423L40.7771 27.1338V38.9166L44.0551 38.8903L44.0551 22.0577Z" fill="white"/>
-                  <defs>
-                    <filter id="filter0_b_1_191" x="-50" y="-50" width="168.384" height="162" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feGaussianBlur in="BackgroundImageFix" stdDeviation="25"/>
-                      <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_191"/>
-                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_191" result="shape"/>
-                    </filter>
-                  </defs>
-                </svg></p>
-              </div>
+            <div class="projectImage3">
+              <img src="./img/web des.png" alt="web design" class="pic1">
+              <p class="titleImage">Api</p>
+              <p class="directBtn"><svg xmlns="http://www.w3.org/2000/svg" width="69" height="62" viewBox="0 0 69 62" fill="none">
+                <g filter="url(#filter0_b_1_191)">
+                  <ellipse cx="34.192" cy="31" rx="34.192" ry="31" fill="white" fill-opacity="0.4"/>
+                </g>
+                <path d="M44.0551 22.0577L25.4893 22.0577L25.4603 25.0297L38.4564 25.0297L24.3289 37.8382L26.6497 39.9423L40.7771 27.1338V38.9166L44.0551 38.8903L44.0551 22.0577Z" fill="white"/>
+                <defs>
+                  <filter id="filter0_b_1_191" x="-50" y="-50" width="168.384" height="162" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="25"/>
+                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_191"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_191" result="shape"/>
+                  </filter>
+                </defs>
+              </svg></p>
+            </div>
+    
+            <div class="projectImage4">
+              <img src="./img/iot prototype.png" alt="" class="pic2">
+              <p class="titleImage">Web design</p>
+              <p class="directBtn"><svg xmlns="http://www.w3.org/2000/svg" width="69" height="62" viewBox="0 0 69 62" fill="none">
+                <g filter="url(#filter0_b_1_191)">
+                  <ellipse cx="34.192" cy="31" rx="34.192" ry="31" fill="white" fill-opacity="0.4"/>
+                </g>
+                <path d="M44.0551 22.0577L25.4893 22.0577L25.4603 25.0297L38.4564 25.0297L24.3289 37.8382L26.6497 39.9423L40.7771 27.1338V38.9166L44.0551 38.8903L44.0551 22.0577Z" fill="white"/>
+                <defs>
+                  <filter id="filter0_b_1_191" x="-50" y="-50" width="168.384" height="162" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="25"/>
+                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_191"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_191" result="shape"/>
+                  </filter>
+                </defs>
+              </svg></p>
+            </div>
           </div>
           <div class="arrow_btn mgContact">
             <svg
