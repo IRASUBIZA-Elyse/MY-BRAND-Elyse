@@ -23,11 +23,7 @@ html {
 .mg_b {
   margin-bottom: 20px;
 }
-/* img {
-  max-width: 100% !important; /* or use a fixed width */
-/* height: auto;
-  margin: 0 auto;
-}*/
+
 .container {
   max-width: 1100px;
   margin: auto;
@@ -102,7 +98,10 @@ html {
   top: -15px;
   margin-bottom: -25px;
 }
-
+.padding {
+  padding-top: 5px;
+  padding-left: 5px;
+}
 /* other buttons */
 .arrow_btn {
   color: white;
@@ -122,10 +121,7 @@ html {
   padding-bottom: 6px;
   padding-right: 5px;
 }
-.padding {
-  padding-top: 5px;
-  padding-left: 5px;
-}
+
 .icon {
   padding-top: 3px;
   /* padding-left: 10px; */
@@ -290,13 +286,13 @@ svg.svgAboutMe {
   font-size: 15px;
   font-style: normal;
   font-weight: 300;
-  line-height: 126%; /* 25.2px */
+  line-height: 28px;
 }
 .skills-words a {
   color: #a6a001;
 }
 .btn {
-  margin-top: 80px;
+  margin-top: 20px;
   display: flex;
   border: none;
   width: 200px;
@@ -472,17 +468,6 @@ svg.svgAboutMe {
 .projectImage4 {
   grid-area: 2/ 2/ -1/ -1;
 }
-*/
-
-/* .pic1,
-.pic4 {
-  width: 100%;
-}
-.pic2,
-.pic4 {
-  width: 70%;
-  height: 70%;
-} */
 
 .titleImage {
   position: relative;
@@ -518,8 +503,6 @@ svg.svgAboutMe {
   margin: auto;
 }
 .blog {
-  /* box-shadow: 0 4px 10px #131313f3; */
-
   border-radius: 30xp;
   width: 250px;
   padding-bottom: 40px;
@@ -699,6 +682,7 @@ ul {
   width: 100%;
   margin: 10px 10px;
 }
+
 /* single blog */
 .single-blog {
   margin-top: 20px;
@@ -740,6 +724,143 @@ ul {
   outline: none;
   border: 1px solid #a6a001;
   border-radius: 6px;
+}
+
+/* login page */
+.all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.login-container {
+  background-color: #1c1a1a;
+  padding: 20px 32px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  height: 60%;
+}
+.login-container h2 {
+  text-align: center;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+.input-group input {
+  padding: 10px 10px 10px 40px;
+  width: 100%;
+  border: 1px solid #4b4b4b;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: #4b4b4b;
+  color: white;
+}
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+.login-form button {
+  background-color: #a6a001;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.login-form button:hover {
+  background-color: #e6b800;
+}
+.check {
+  margin-right: 20px;
+}
+.login-form .checkbox-container {
+  display: flex;
+  align-items: center;
+  /* margin: 10px 0; */
+  justify-content: space-between;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.login-form .checkbox-container input {
+  margin-right: 5px;
+}
+.login-form .login-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+.login-form {
+  text-align: center;
+  margin-top: 10px;
+}
+.input-group svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #aaa;
+  width: 20px;
+  height: 20px;
+}
+.sign-up-link {
+  text-align: start;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.login-container a {
+  text-decoration: none;
+  color: #a6a001;
+}
+.boxAdmin {
+  display: flex;
+}
+.sidebarAdmin {
+  background-color: #1c1a1a;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 12.5%;
+  height: 90vh;
+  padding: 20px;
+}
+.sidebar .sidemenu {
+  margin-top: 100%;
+  cursor: pointer;
+}
+.sidecontent {
+  margin-top: 10px;
+}
+.logout {
+  background-color: #141313;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+}
+.mainBar {
+  margin: 60px 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.box {
+  text-align: center;
+  background-color: #3e3e3e;
+  border-radius: 10px;
+  width: 150px;
+  height: 100px;
+  padding: 10px 10px;
 }
 @media screen and (max-width: 1000px) {
   .projectAll {
@@ -816,7 +937,7 @@ ul {
     padding-top: 30px;
   }
   .btn {
-    margin-top: 80px;
+    margin-top: 10px;
     display: flex;
     border: none;
     width: 180px;
@@ -846,6 +967,9 @@ ul {
     /* padding-top: 50px; */
     padding-right: 30px;
   }
+  .skillPar {
+    padding: 22px 40px;
+  }
   .skillSide {
     display: none;
   }
@@ -869,6 +993,9 @@ ul {
   }
   .blogsBox {
     display: block;
+  }
+  .photoProject img {
+    width: 70%;
   }
 }
 @media only screen and (max-width: 700px) {
@@ -999,6 +1126,8 @@ ul {
     flex-wrap: wrap;
     margin-top: 10px;
   }
+  .btn {
+  }
 
   /* service */
   .partIcon {
@@ -1016,5 +1145,13 @@ ul {
   }
   .blogImage img {
     width: clamp(250px, 55%, 400px);
+  }
+  .input-blogs {
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .project {
+    margin-left: 0;
   }
 }
