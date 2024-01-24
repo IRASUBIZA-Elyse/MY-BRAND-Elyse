@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@500&family=Syne&family=Syne+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Syne", sans-serif;
+  line-height: 1.4;
+  background-color: #000;
+  color: white;
+}
+html {
+  scroll-behavior: smooth;
+}
+.text_primary {
+  color: #a6a001;
+}

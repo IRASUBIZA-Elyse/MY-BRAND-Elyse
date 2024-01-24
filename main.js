@@ -9,3 +9,11 @@ window.addEventListener("scroll", function () {
     document.querySelector(".footer2").style.opacity = 0.8;
   }
 });
+// for the navbar menu
+document.getElementById("menu-button").addEventListener("click", function () {
+  var navList = document.querySelector("#navbar ul");
+  navList.style.display = navList.style.display === "block" ? "none" : "block";
+  navList.style.width = navList.style.width === "100%" ? "0" : "100%";
+});
+
+// for the admin sidebar
