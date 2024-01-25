@@ -443,28 +443,52 @@ svg.svgAboutMe {
   cursor: pointer;
 }
 
-.photoProject {
+.grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 5px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  width: 83%;
 }
 
-.projectImage1 {
-  grid-area: 1/ 1/ 2/ 2;
+.grid-item {
+  position: relative;
+  color: white;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
-/* .projectImage1 img {
+
+.grid-item img {
   width: 100%;
-} */
-.projectImage2 {
-  grid-area: 1/ 2/ 2/ -1;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
-.projectImage3 {
-  grid-area: 2/ 1/ -1/ 2;
+.grid-item-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  color: white;
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 700;
 }
-.projectImage4 {
-  grid-area: 2/ 2/ -1/ -1;
+
+.grid-item:nth-child(1),
+.grid-item:nth-child(4),
+.grid-item:nth-child(5) {
+  grid-column: span 5;
+}
+
+.grid-item:nth-child(2),
+.grid-item:nth-child(3),
+.grid-item:nth-child(6) {
+  grid-column: span 3;
 }
 
 .titleImage {
@@ -821,6 +845,12 @@ ul {
 }
 
 /* dashboard */
+.menu-logo {
+  display: flex;
+}
+.menuAdmin {
+  padding-top: 10px;
+}
 .boxAdmin {
   display: none;
   display: flex;
@@ -1200,5 +1230,13 @@ ul {
 @media screen and (max-width: 600px) {
   .project {
     margin-left: 0;
+  }
+
+  .grid-container {
+    display: block;
+    width: 100%;
+  }
+  .grid-item img {
+    margin-bottom: 20px;
   }
 }

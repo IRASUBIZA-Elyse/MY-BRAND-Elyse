@@ -17,3 +17,8 @@ document.getElementById("menu-button").addEventListener("click", function () {
 });
 
 // for the admin sidebar
+document.getElementById("menu-admin").addEventListener("click", function () {
+  var adminList = document.querySelector(".sidebarAdmin");
+  adminList.style.display === "block" ? "none" : "block";
+  adminList.style.width = adminList.style.width === "100%" ? "0" : "100%";
+});
