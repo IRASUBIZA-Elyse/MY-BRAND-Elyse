@@ -4,26 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>admin blog page</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/8db6657193.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/admin.css" />
   </head>
   <body>
-    <nav id="navbar">
-      <div class="navbar container">
-        <div class="menu-logo">
-          <div class="menuAdmin" id="menu-admin">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="35"
-              height="35"
-              viewBox="0 0 35 35"
-              fill="none"
-            >
-              <path
-                d="M0 5.25V8.75H35V5.25H0ZM0 15.75V19.25H35V15.75H0ZM0 26.25V29.75H35V26.25H0Z"
-                fill="#A6A001"
-              />
-            </svg>
-          </div>
+    <div class="sidebar">
+      <div class="logo"></div>
+      <ul class="menu">
+        <li>
+          <a href="trialDashboard.html"
+            ><i class="fa-solid fa-chart-line"></i><span>Dashboard</span></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i class="fa-regular fa-address-card"></i><span>Contacts</span></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a
+          >
+        </li>
+        <li class="active">
+          <a href="adminBlogs.html"
+            ><i class="fa-solid fa-blog"></i><span>Blogs</span></a
+          >
+        </li>
+        <li class="logout">
+          <a href="index.html"
+            ><i class="fa-solid fa-arrow-right-from-bracket"></i
+            ><span>Log out</span></a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="header-wrapper">
+        <div class="header-title">
           <h1 class="Logo">
             <span class="text_primary">E</span>l<span class="text_primary"
               >y</span
@@ -31,58 +52,31 @@
             ir
           </h1>
         </div>
-
-        <ul>
-          <li>
-            <a class="arrow_btnLogin" href="logIn.html"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="42"
-                height="42"
-                viewBox="0 0 42 42"
-                fill="none"
-              >
-                <circle cx="18" cy="18" r="18" fill="#A6A001" />
-              </svg>
-              <div class="text">
-                <p>Admin</p>
-                <p class="padding">
-                  <svg
-                    class="padding"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    class="icon"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M3.49865 3.82178L9.67698 10.0001L3.49865 16.1784L2.32031 15.0001L7.32031 10.0001L2.32031 5.00011L3.49865 3.82178Z"
-                      fill="white"
-                    />
-                  </svg>
-                </p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="boxAdmin">
-      <div class="sidebarAdmin">
-        <ul class="sidemenu">
-          <!-- <li class="sidecontent"><a href="">likes</a></li> -->
-          <li class="sidecontent"><a href="dashboard.html">contacts</a></li>
-          <li class="sidecontent"><a href="adminBlogs.html">blogs</a></li>
-        </ul>
-        <div>
-          <p class="logout"><a href="index.html">logout</a></p>
+        <div class="user-info">
+          <a class="arrow_btnLogin" href="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="42"
+              viewBox="0 0 42 42"
+              fill="none"
+            >
+              <circle cx="18" cy="18" r="18" fill="#A6A001" />
+            </svg>
+            <div class="text">
+              <p>Admin</p>
+              <p class="padding">
+                <i class="fa-solid fa-angle-right"></i>
+              </p>
+            </div>
+          </a>
         </div>
       </div>
       <div class="dashboard">
-        <h2 class="BLOGS"><span class="text_primary">Blogs</span></h2>
+        <h2 class="BLOGS">
+          <span class="text_primary">Blogs</span
+          ><a href="createBlogs.html" class="btn">create</a>
+        </h2>
         <div class="container blogsBox">
           <div class="blogImage">
             <img src="./img/blogpic 1.png" alt="blog images" />
@@ -107,7 +101,7 @@
           </div>
 
           <div class="svgPosition buttonsAdmin">
-            <div class="btn"><a href="updateBlogs.html">edit</a></div>
+            <div><a href="updateBlogs.html" class="btn">edit</a></div>
             <div class="btn">delete</div>
           </div>
         </div>
@@ -134,7 +128,7 @@
             <p>Author: Henry</p>
           </div>
           <div class="svgPosition buttonsAdmin">
-            <div class="btn"><a href="updateBlogs.html">edit</a></div>
+            <div><a href="updateBlogs.html" class="btn">edit</a></div>
             <div class="btn">delete</div>
           </div>
         </div>
@@ -162,7 +156,7 @@
           </div>
 
           <div class="svgPosition buttonsAdmin">
-            <div class="btn">edit</div>
+            <div><a href="updateBlogs.html" class="btn">edit</a></div>
             <div class="btn">delete</div>
           </div>
         </div>
@@ -190,8 +184,8 @@
           </div>
 
           <div class="svgPosition buttonsAdmin">
-            <div class="btn">edit</div>
-            <div class="btn">delete</div>
+            <div><a href="updateBlogs.html" class="btn">edit</a></div>
+            <a class="btn" href="">delete</a>
           </div>
         </div>
         <div class="container blogsBox">
@@ -218,7 +212,7 @@
           </div>
 
           <div class="svgPosition buttonsAdmin">
-            <div class="btn">edit</div>
+            <div><a href="updateBlogs.html" class="btn">edit</a></div>
             <div class="btn">delete</div>
           </div>
         </div>
@@ -245,24 +239,13 @@
             <p>Author: Henry</p>
           </div>
           <div class="svgPosition buttonsAdmin">
-            <div class="btn">edit</div>
+            <div><a href="updateBlogs.html" class="btn">edit</a></div>
             <div class="btn">delete</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- footer -->
-    <footer id="footer">
-      <div class="footer2">
-        <p>
-          Copyright &copy 2024 <span class="text_primary">E</span>L<span
-            class="text_primary"
-            >Y</span
-          >S<span class="text_primary">E</span> IRASUBIZA All Rights Reserved.
-        </p>
-      </div>
-    </footer>
     <script src="./main.js"></script>
   </body>
 </html>
