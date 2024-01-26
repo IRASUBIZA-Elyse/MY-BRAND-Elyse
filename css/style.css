@@ -747,6 +747,7 @@ ul {
 }
 
 /* login page */
+
 .all {
   display: flex;
   justify-content: center;
@@ -947,6 +948,9 @@ ul {
 }
 .dashboard {
   margin: auto;
+}
+.text-login {
+  color: #000;
 }
 @media screen and (max-width: 1000px) {
   .projectAll {
