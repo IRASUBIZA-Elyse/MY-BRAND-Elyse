@@ -3,71 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin panel</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <title>trial design</title>
+    <script
+      src="https://kit.fontawesome.com/8db6657193.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/admin.css" />
   </head>
   <body>
-    <nav id="navbar">
-      <div class="menu"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-        <path d="M0 5.25V8.75H35V5.25H0ZM0 15.75V19.25H35V15.75H0ZM0 26.25V29.75H35V26.25H0Z" fill="#A6A001"/>
-      </svg></div>
+    <div class="sidebar">
+      <div class="logo"></div>
+      <ul class="menu">
+        <li class="active">
+          <a href="Dashboard.html"
+            ><i class="fa-solid fa-chart-line"></i><span>Dashboard</span></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i class="fa-regular fa-address-card"></i><span>Contacts</span></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a
+          >
+        </li>
+        <li>
+          <a href="adminBlogs.html"
+            ><i class="fa-solid fa-blog"></i><span>Blogs</span></a
+          >
+        </li>
+        <li class="logout">
+          <a href="index.html"
+            ><i class="fa-solid fa-arrow-right-from-bracket"></i
+            ><span>Log out</span></a
+          >
+        </li>
+      </ul>
     </div>
-      <div class="navbar container">
-        <h1 class="Logo">
-          <span class="text_primary">E</span>l<span class="text_primary">y</span
-          >s<span class="text_primary">e</span>
-          ir
-        </h1>
-        <ul>
-          <li>
-            <a class="arrow_btnLogin" href="logIn.html"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="42"
-                height="42"
-                viewBox="0 0 42 42"
-                fill="none"
-              >
-                <circle cx="18" cy="18" r="18" fill="#A6A001" />
-              </svg>
-              <div class="text">
-                <p>Admin</p>
-                <p class="padding">
-                  <svg
-                    class="padding"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    class="icon"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M3.49865 3.82178L9.67698 10.0001L3.49865 16.1784L2.32031 15.0001L7.32031 10.0001L2.32031 5.00011L3.49865 3.82178Z"
-                      fill="white"
-                    />
-                  </svg>
-                </p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="boxAdmin">
-      <div class="sidebarAdmin">
-        <ul class="sidemenu">
-          <!-- <li class="sidecontent"><a href="">likes</a></li> -->
-          <li class="sidecontent"><a href="dashboard.html">contacts</a></li>
-          <li class="sidecontent"><a href="adminBlogs.html">blogs</a></li>
-        </ul>
-        <div>
-          <p class="logout"><a href="index.html">logout</a></p>
+
+    <div class="main-content">
+      <div class="header-wrapper">
+        <div class="header-title">
+          <h1 class="Logo">
+            <span class="text_primary">E</span>l<span class="text_primary"
+              >y</span
+            >s<span class="text_primary">e</span>
+            ir
+          </h1>
+        </div>
+        <div class="user-info">
+          <a class="arrow_btnLogin" href="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="42"
+              viewBox="0 0 42 42"
+              fill="none"
+            >
+              <circle cx="18" cy="18" r="18" fill="#A6A001" />
+            </svg>
+            <div class="text">
+              <p>Admin</p>
+              <p class="padding">
+                <i class="fa-solid fa-angle-right"></i>
+              </p>
+            </div>
+          </a>
         </div>
       </div>
-      <div class="dashboard">
+
+      <div class="card-container">
         <div class="mainBar">
           <div class="likesBox box">
             <svg
@@ -134,94 +141,7 @@
             <p class="commentNumber">33 shares</p>
           </div>
         </div>
-        <div class="recent-contacts">
-          <h2 class="recent-contactsTitle">Recent Contacts:</h2>
-          <div class="contactSection">
-            <div class="contact1">
-              <p>
-                1.Alex MUga: We are proud to announce that Ignis has moved into
-                a new space! After months of searching for the right place to
-                showcase our clothing apparel, we decided to choose this studio,
-                as it can be an office and an art studio in one. What stunned us
-                the most was the balcony that faces southeast. But, we are
-                getting ahead of ourselve.
-              </p>
-            </div>
-          </div>
-          <div class="contactSection">
-            <div class="contact1">
-              <p>
-                2.Alex MUga: We are proud to announce that Ignis has moved into
-                a new space! After months of searching for the right place to
-                showcase our clothing apparel, we decided to choose this studio,
-                as it can be an office and an art studio in one. What stunned us
-                the most was the balcony that faces southeast. But, we are
-                getting ahead of ourselve.
-              </p>
-            </div>
-          </div>
-          <div class="contactSection">
-            <div class="contact1">
-              <p>
-                2. Alex MUga: We are proud to announce that Ignis has moved into
-                a new space! After months of searching for the right place to
-                showcase our clothing apparel, we decided to choose this studio,
-                as it can be an office and an art studio in one. What stunned us
-                the most was the balcony that faces southeast. But, we are
-                getting ahead of ourselve.
-              </p>
-            </div>
-          </div>
-          <div class="contactSection">
-            <div class="contact1">
-              <p>
-                2. Alex MUga: We are proud to announce that Ignis has moved into
-                a new space! After months of searching for the right place to
-                showcase our clothing apparel, we decided to choose this studio,
-                as it can be an office and an art studio in one. What stunned us
-                the most was the balcony that faces southeast. But, we are
-                getting ahead of ourselve.
-              </p>
-            </div>
-          </div>
-          <div class="contactSection">
-            <div class="contact1">
-              <p>
-                2. Alex MUga: We are proud to announce that Ignis has moved into
-                a new space! After months of searching for the right place to
-                showcase our clothing apparel, we decided to choose this studio,
-                as it can be an office and an art studio in one. What stunned us
-                the most was the balcony that faces southeast. But, we are
-                getting ahead of ourselve.
-              </p>
-            </div>
-          </div>
-          <div class="contactSection">
-            <div class="contact1">
-              <p>
-                2. Alex MUga: We are proud to announce that Ignis has moved into
-                a new space! After months of searching for the right place to
-                showcase our clothing apparel, we decided to choose this studio,
-                as it can be an office and an art studio in one. What stunned us
-                the most was the balcony that faces southeast. But, we are
-                getting ahead of ourselve.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-<!-- footer -->
-<footer id="footer">
-  <div class="footer2">
-    <p>
-      Copyright &copy 2024 <span class="text_primary">E</span>L<span
-        class="text_primary"
-        >Y</span
-      >S<span class="text_primary">E</span> IRASUBIZA All Rights Reserved.
-    </p>
-  </div>
-</footer>
-
   </body>
 </html>
