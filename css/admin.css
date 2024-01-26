@@ -249,6 +249,64 @@ a {
   text-align: center;
   height: 200px;
 }
+.main-title {
+  margin: 20px;
+}
+/* contacts admin */
+/* .tabular {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+} */
+.tabular-wrapperContacts {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  width: 100%;
+}
+.tabular-wrapper {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  width: 100%;
+}
+.table-container {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  background-color: #131313e7;
+}
+th {
+  padding: 10px;
+  text-align: left;
+}
+tbody {
+  background-color: #3e3e3e;
+}
+td {
+  padding: 15px;
+  font-size: 14px;
+}
+tfoot {
+  background-color: #131313e7;
+  font-weight: bold;
+}
+tfoot td {
+  padding: 15px;
+}
+.table-container button {
+  color: #a6a001;
+  background-color: none;
+  cursor: pointer;
+}
+
 @media screen and(max-width: 1000px) {
   .blogImage img {
     width: 100%;
