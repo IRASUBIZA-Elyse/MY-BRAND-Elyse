@@ -238,7 +238,7 @@ a {
   padding: 10px 20px;
   border-radius: 8px;
   outline: none;
-  border: none;
+  border: 1px solid black;
 }
 .message-input {
   margin-top: 5px;
@@ -312,7 +312,11 @@ tfoot td {
   background-color: none;
   cursor: pointer;
 }
-
+.black {
+  font: 35px;
+  margin-top: 5px;
+  color: #fff;
+}
 @media screen and(max-width: 1000px) {
   .blogImage img {
     width: 100%;
