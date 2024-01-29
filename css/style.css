@@ -821,8 +821,17 @@ ul {
   font-size: 0.9em;
 }
 .login-form {
-  text-align: center;
+  /* text-align: center; */
   margin-top: 10px;
+}
+.error {
+  margin-top: -15px;
+  margin-bottom: 10px;
+  color: #c62828;
+}
+.login-form #username-error,
+.login-form #password-error {
+  display: none;
 }
 .input-group svg {
   position: absolute;
@@ -952,6 +961,30 @@ ul {
 .text-login {
   color: #000;
 }
+.hide {
+  display: none;
+}
+/* sidebarIndex */
+#sidebarIndex {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: #1e1e1e93;
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
+  transition: all 1s ease-in;
+  display: block;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sidebar-Index li {
+  /* width: 100%; */
+  padding: 10px;
+}
 @media screen and (max-width: 1000px) {
   .projectAll {
     display: flex;
@@ -996,12 +1029,22 @@ ul {
     .navbar ul {
       display: none;
       width: fit-content;
-      background: #1e1e1e;
+      background: #1e1e1e98;
+      backdrop-filter: blur(10px);
       position: absolute;
+      transition: 0.5s ease-in-out;
       top: 65px;
       right: 0;
       z-index: 2;
       padding: 10px;
+    }
+    .arrow_btnLogin {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .arrow_btnLogin .text {
+      left: -4%;
     }
 
     .blogImage img {
@@ -1021,7 +1064,7 @@ ul {
     .menu {
       display: block;
       cursor: pointer;
-      padding-top: 10px;
+      padding: 20px;
     }
     .homeArrowBtn {
       padding-top: 30px;

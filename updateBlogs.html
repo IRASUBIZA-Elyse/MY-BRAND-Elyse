@@ -9,17 +9,20 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/admin.css" />
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: 'textarea#tiny',
+            plugins: [
+            'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+            'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+            'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+            ],
+            toolbar: 'undo redo | a11ycheck casechange blocks | bold italic backcolor | alignleft aligncenter alignright alignjustify |' +
+            'bullist numlist checklist outdent indent | removeformat | code table help'
+      })
+    </script>
   </head>
   <body>
   </head>
@@ -92,8 +95,8 @@
           <div class="likesBox box">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="22"
+              width="35"
+              height="25"
               viewBox="0 0 26 22"
               fill="none"
             >
@@ -107,8 +110,8 @@
           <div class="sharesBox box">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="22"
+              width="35"
+              height="25"
               viewBox="0 0 26 22"
               fill="none"
             >
@@ -134,9 +137,9 @@
           <div class="commentBox box">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="21"
-              viewBox="0 0 24 21"
+              width="35"
+              height="25"
+              viewBox="0 0 35 25"
               fill="none"
             >
               <g clip-path="url(#clip0_2276_785)">
@@ -147,7 +150,7 @@
               </g>
               <defs>
                 <clipPath id="clip0_2276_785">
-                  <rect width="24" height="21" fill="white" />
+                  <rect width="30" height="25" fill="white" />
                 </clipPath>
               </defs>
             </svg>
@@ -157,15 +160,15 @@
       </div>
 
       <div class="recent-contacts">
-        <h2 class="recent-contactsTitle">upadate blogs:</h2>
+        <h2 class="recent-contactsTitle">update blogs:</h2>
         <div class="update">
           <div class="update-image">
             <img src="" alt="" />
             <svg
               class="svgPhoto"
               xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="26"
+              width="35"
+              height="25"
               viewBox="0 0 26 26"
               fill="none"
             >
@@ -195,20 +198,15 @@
               />
             </div>
             <div class="update-content">
-              <div id="summernote"><p>Hello Summernote</p></div>
-
+              <textarea id="tiny" name="" id="" cols="30" rows="10"></textarea>
             </div>
+            
           </div>
         </div>
-        <p class="btn">update</p>
+        <p class="btn">create</p>
       </div>
     </div>
-
-    <script>
-      $(document).ready(function () {
-        $("#summernote").summernote();
-      });
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
   </body>
 </html>

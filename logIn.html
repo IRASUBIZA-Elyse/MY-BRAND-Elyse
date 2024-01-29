@@ -75,8 +75,15 @@
     </nav>
     <div class="all">
       <div class="login-container">
+        <div id="error"></div>
         <h2>Login</h2>
-        <form class="login-form">
+        <form
+          class="login-form"
+          id="form"
+          name="form"
+          method="post"
+          onsubmit="return validated()"
+        >
           <div class="input-group">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M12,12A4,4 0 1,0 8,8A4,4 0 0,0 12,12Z" />
@@ -84,7 +91,16 @@
                 d="M12,14C9.33,14 4,15.34 4,18V20H20V18C20,15.34 14.67,14 12,14Z"
               />
             </svg>
-            <input type="text" placeholder="username" />
+            <input
+              type="text"
+              placeholder="username"
+              name="username"
+              id="username"
+              required
+            />
+          </div>
+          <div class="error" id="username-error">
+            please fill in the username
           </div>
           <div class="input-group">
             <svg
@@ -99,8 +115,15 @@
                 d="M 25 3 C 18.363281 3 13 8.363281 13 15 L 13 20 L 9 20 C 7.355469 20 6 21.355469 6 23 L 6 47 C 6 48.644531 7.355469 50 9 50 L 41 50 C 42.644531 50 44 48.644531 44 47 L 44 23 C 44 21.355469 42.644531 20 41 20 L 37 20 L 37 15 C 37 8.363281 31.636719 3 25 3 Z M 25 5 C 30.566406 5 35 9.433594 35 15 L 35 20 L 15 20 L 15 15 C 15 9.433594 19.433594 5 25 5 Z M 9 22 L 41 22 C 41.554688 22 42 22.445313 42 23 L 42 47 C 42 47.554688 41.554688 48 41 48 L 9 48 C 8.445313 48 8 47.554688 8 47 L 8 23 C 8 22.445313 8.445313 22 9 22 Z M 25 30 C 23.300781 30 22 31.300781 22 33 C 22 33.898438 22.398438 34.6875 23 35.1875 L 23 38 C 23 39.101563 23.898438 40 25 40 C 26.101563 40 27 39.101563 27 38 L 27 35.1875 C 27.601563 34.6875 28 33.898438 28 33 C 28 31.300781 26.699219 30 25 30 Z"
               ></path>
             </svg>
-            <input type="password" placeholder="Password" />
+            <input
+              name="password"
+              type="password"
+              placeholder="Password"
+              id="password"
+              required
+            />
           </div>
+          <div class="error" id="password-error">please provide email</div>
           <div class="checkbox-container">
             <div class="check">
               <input type="checkbox" id="terms" />
@@ -108,13 +131,13 @@
             </div>
             <a href="#">Forgot password</a>
           </div>
-          <button type="submit"><a href="Dashboard.html">Login</a></button>
+          <button type="submit">Login</button>
           <div class="sign-up-link">
             Don't have an account? <a href="#">Sign up</a>
           </div>
         </form>
       </div>
     </div>
-    <script src="./main.js"></script>
+    <script src="./logIn.js"></script>
   </body>
 </html>

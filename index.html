@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+    <script
+      src="https://kit.fontawesome.com/8db6657193.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./css/style.css" />
     <!-- <link rel="stylesheet" media="screen and (max-width: 760px)" href="./mobile.css"> -->
   </head>
@@ -15,14 +19,14 @@
           >s<span class="text_primary">e</span>
           ir
         </h1>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#About_Me">About Me</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#portofolio-title">Portfolio</a></li>
-          <li><a href="blogs.html">Blogs</a></li>
-          <li><a href="#Contact_Me">Contact Me</a></li>
-          <li>
+        <ul class="list hide">
+          <li class="options"><a href="#home">Home</a></li>
+          <li class="options"><a href="#About_Me">About Me</a></li>
+          <li class="options"><a href="#skills">Skills</a></li>
+          <li class="options"><a href="#portofolio-title">Portfolio</a></li>
+          <li class="options"><a href="blogs.html">Blogs</a></li>
+          <li class="options"><a href="#Contact_Me">Contact Me</a></li>
+          <li class="options">
             <a class="arrow_btnLogin" href="logIn.html"><svg
               xmlns="http://www.w3.org/2000/svg"
               width="42"
@@ -54,12 +58,53 @@
             </div>
             </a>
           </li>
+          
         </ul>
+        <div onclick="showSidebar()" class="menu" id="menu-button"><i class="fa-solid fa-bars"></i></div>
         
-        <div class="menu" id="menu-button"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-          <path d="M0 5.25V8.75H35V5.25H0ZM0 15.75V19.25H35V15.75H0ZM0 26.25V29.75H35V26.25H0Z" fill="#A6A001"/>
-        </svg></div>
+        <!-- <div class="menu" id="menu-button"><i class="fa-solid fa-bars"></i></div> -->
       </div>
+      <ul class="sidebar-Index" id="sidebarIndex">
+        <li onclick=hideSidebar() ><i class="fa-solid fa-xmark"></i></li>
+        <li class="options"><a href="#home">Home</a></li>
+        <li class="options"><a href="#About_Me">About Me</a></li>
+        <li class="options"><a href="#skills">Skills</a></li>
+        <li class="options"><a href="#portofolio-title">Portfolio</a></li>
+        <li class="options"><a href="blogs.html">Blogs</a></li>
+        <li class="options"><a href="#Contact_Me">Contact Me</a></li>
+        <li class="options">
+          <a class="arrow_btnLogin" href="logIn.html"><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="42"
+            height="42"
+            viewBox="0 0 42 42"
+            fill="none"
+          >
+            <circle cx="18" cy="18" r="18" fill="#A6A001" />
+          </svg>
+          <div class="text">
+            <p>Login</p>
+            <p class="padding">
+              <svg class="padding"
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 20 20"
+                fill="none"
+                class="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M3.49865 3.82178L9.67698 10.0001L3.49865 16.1784L2.32031 15.0001L7.32031 10.0001L2.32031 5.00011L3.49865 3.82178Z"
+                  fill="white"
+                />
+              </svg>
+            </p>
+          </div>
+          </a>
+        </li>
+      </ul>
     </nav>
 
     <!--home page  -->
@@ -714,7 +759,7 @@
       <p class="Contact-me">Contact me</p>
       <p class="getInTouch">Please use the form below to contact Me</p>
       <div class="contact">
-        <form action="#">
+        <form action="#" id="form">
           <div class="input-box">
             <div class="input-field field">
               <p class="padding-label">First name</p>
@@ -724,8 +769,11 @@
                 id="FirstName"
                 class="item"
                 placeholder="First name"
+                
               />
+              <div class="error firstNAme-error">name required required</div>
             </div>
+            
             <div class="input-field field">
               <p class="padding-label">Last name</p>
               <input
@@ -734,7 +782,9 @@
                 id="LastName"
                 class="item"
                 placeholder="Last name"
+                
               />
+              <div class="error lastName-error">last name required</div>
             </div>
           </div>
   
@@ -747,7 +797,9 @@
                 id="email"
                 class="item"
                 placeholder="Email Address"
+                
               />
+              <div class="error email-error">mail required</div>
             </div>
             <div class="input-field field">
               <p class="padding-label">Phone number</p>
@@ -757,7 +809,9 @@
                 id="phone"
                 class="item"
                 placeholder="phone number"
+                required
               />
+              <div class="error phoneNUmber-error">phone number required</div>
             </div>
           </div>
           <div class="textarea-field field">
@@ -769,7 +823,9 @@
               rows="10"
               placeholder="Your Message"
               class="itemMessage"
+              required
             ></textarea>
+            <div class="error message-error"></div>
           </div>
           <button class="submitbtn" type="submit">Submitt</button>
         </form>
