@@ -15,21 +15,29 @@ document.getElementById("menu-button").addEventListener("click", function () {
 });
 
 // validating login
-const username = document.forms["form"]["username"];
-const password = document.forms["form"]["password"];
+// const username = document.forms["form"]["username"];
+// const password = document.forms["form"]["password"];
 // const password = document.getElementById("password");
-const usernameError = document.getElementsById("user-error");
-const passwordError = document.getElementsById("password-error");
+
+const submit = document.getElementById("SubmittButton");
+const form = document.getElementById("form");
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+
+const usernameError = document.getElementById("username-error").value;
+const passwordError = document.getElementById("password-error").value;
 
 // form.addEventListener("submit", (e) => {
 //   let message = [];
-//   if (username.value === "" || username.value == null) {
+//   if (password.value === "" || password.value == null) {
 //     message.push("username required");
 //   }
 //   if (message.length > 0) {
 //     e.preventDefault();
-//     usernameError.innerText = message.join(", ");
+//     password.innerText = message.join(", ");
+//     password.style.display = "block";
 //   }
+//   // validate();
 // });
 function validate() {
   if (email.value.length < 9) {

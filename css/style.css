@@ -600,6 +600,7 @@ form .input-box {
   outline: none;
   border: 1px solid #a6a001;
   border-radius: 6px;
+  font-family: "Syne", sans-serif;
 }
 .padding-label {
   margin-right: 20px;
@@ -825,6 +826,7 @@ ul {
   margin-top: 10px;
 }
 .error {
+  font-size: 13px;
   margin-top: -15px;
   margin-bottom: 10px;
   color: #c62828;
@@ -975,11 +977,18 @@ ul {
   background-color: #1e1e1e93;
   backdrop-filter: blur(10px);
   box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
-  transition: all 1s ease-in;
-  display: block;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+}
+#sidebarIndex.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }
 .sidebar-Index li {
   /* width: 100%; */

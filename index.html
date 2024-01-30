@@ -763,6 +763,7 @@
           <div class="input-box">
             <div class="input-field field">
               <p class="padding-label">First name</p>
+              <label for="FirstName"></label>
               <input
                 type="text"
                 name=""
@@ -771,11 +772,12 @@
                 placeholder="First name"
                 
               />
-              <div class="error firstNAme-error">name required required</div>
+              <div class="error" id="firstName-error"></div>
             </div>
             
             <div class="input-field field">
               <p class="padding-label">Last name</p>
+              <label for="LastName"></label>
               <input
                 type="text"
                 name=""
@@ -784,13 +786,14 @@
                 placeholder="Last name"
                 
               />
-              <div class="error lastName-error">last name required</div>
+              <div class="error" id="lastName-error"></div>
             </div>
           </div>
   
           <div class="input-box">
             <div class="input-field field">
               <p class="padding-label">Email Address</p>
+              <label for="email"></label>
               <input
                 type="text"
                 name=""
@@ -799,7 +802,7 @@
                 placeholder="Email Address"
                 
               />
-              <div class="error email-error">mail required</div>
+              <div class="error" id="email-error"></div>
             </div>
             <div class="input-field field">
               <p class="padding-label">Phone number</p>
@@ -809,9 +812,9 @@
                 id="phone"
                 class="item"
                 placeholder="phone number"
-                required
+                
               />
-              <div class="error phoneNUmber-error">phone number required</div>
+              <div class="error" id="phoneNUmber-error"></div>
             </div>
           </div>
           <div class="textarea-field field">
@@ -823,9 +826,9 @@
               rows="10"
               placeholder="Your Message"
               class="itemMessage"
-              required
+              
             ></textarea>
-            <div class="error message-error"></div>
+            <div class="message-error">heloo</div>
           </div>
           <button class="submitbtn" type="submit">Submitt</button>
         </form>
