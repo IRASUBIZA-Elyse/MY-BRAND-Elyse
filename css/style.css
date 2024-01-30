@@ -488,6 +488,12 @@ svg.svgAboutMe {
 .grid-item:nth-child(6) {
   grid-column: span 1;
 }
+.grid-container .showproject {
+  display: none;
+}
+.grid-container.more .showproject {
+  display: block;
+}
 
 .titleImage {
   position: relative;
@@ -831,10 +837,15 @@ ul {
   margin-bottom: 10px;
   color: #c62828;
 }
-.login-form #username-error,
+.message-error {
+  font-size: 13px;
+  margin-top: -10px;
+  color: #c62828;
+}
+/* .login-form #username-error,
 .login-form #password-error {
   display: none;
-}
+} */
 .input-group svg {
   position: absolute;
   left: 10px;
@@ -974,8 +985,8 @@ ul {
   height: 100vh;
   width: 250px;
   z-index: 999;
-  background-color: #1e1e1e93;
-  backdrop-filter: blur(10px);
+  background-color: #1e1e1e;
+  backdrop-filter: blur(5px);
   box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
   display: none;
   flex-direction: column;

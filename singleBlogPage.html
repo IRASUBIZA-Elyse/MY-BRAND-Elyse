@@ -167,36 +167,39 @@
             </div>
             <div class="leaveA-comment">
               <p><span class="text_primary">leave a comment:</span></p>
-              <form action="#">
+              <form action="#" id="form-SingleBlog">
                 <div class="input-blogs">
                   <div class="input-field field">
                     <input
                       type="text"
                       name=""
-                      id="name"
+                      id="name-SingleBlog"
                       class="itemBlog"
                       placeholder="name"
                     />
+                    <div class="error" id="name-errorSingleBlog"></div>
                   </div>
                   <div class="input-field field">
                     <input
                       type="email"
                       name=""
-                      id="email"
+                      id="email-SingleBlog"
                       class="itemBlog"
                       placeholder="Email"
                     />
+                    <div class="error" id="email-errorSingleBlog"></div>
                   </div>
                 </div>
                 <div class="textarea-field field">
                   <textarea
                     name=""
-                    id="message"
+                    id="message-SingleBlog"
                     cols="30"
                     rows="10"
                     placeholder="Your Message"
                     class="itemMessage-blogs"
                   ></textarea>
+                  <div class="message-error" id="message-errorSingleBlog"></div>
                 </div>
                 <button class="submitbtn" type="submit">Submitt</button>
               </form>

@@ -51,14 +51,14 @@ const passwordError = document.getElementById("password-error");
 form.addEventListener("submit", (e) => {
   let isValid = true;
 
-  if (username.value.trim() === "") {
+  if (username.value.trim() === "" || username.value == null) {
     isValid = false;
     usernameError.textContent = "Username is required";
   } else {
     usernameError.textContent = "";
   }
 
-  if (password.value.trim() === "") {
+  if (password.value.trim() === "" || password.value == null) {
     isValid = false;
     passwordError.textContent = "Password is required";
   } else {

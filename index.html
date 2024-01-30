@@ -20,13 +20,13 @@
           ir
         </h1>
         <ul class="list hide">
-          <li class="options"><a href="#home">Home</a></li>
-          <li class="options"><a href="#About_Me">About Me</a></li>
-          <li class="options"><a href="#skills">Skills</a></li>
-          <li class="options"><a href="#portofolio-title">Portfolio</a></li>
-          <li class="options"><a href="blogs.html">Blogs</a></li>
-          <li class="options"><a href="#Contact_Me">Contact Me</a></li>
-          <li class="options">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#About_Me">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portofolio-title">Portfolio</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="#Contact_Me">Contact Me</a></li>
+          <li>
             <a class="arrow_btnLogin" href="logIn.html"><svg
               xmlns="http://www.w3.org/2000/svg"
               width="42"
@@ -66,13 +66,13 @@
       </div>
       <ul class="sidebar-Index" id="sidebarIndex">
         <li onclick=hideSidebar() ><i class="fa-solid fa-xmark"></i></li>
-        <li class="options"><a href="#home">Home</a></li>
-        <li class="options"><a href="#About_Me">About Me</a></li>
-        <li class="options"><a href="#skills">Skills</a></li>
-        <li class="options"><a href="#portofolio-title">Portfolio</a></li>
-        <li class="options"><a href="blogs.html">Blogs</a></li>
-        <li class="options"><a href="#Contact_Me">Contact Me</a></li>
-        <li class="options">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#About_Me">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portofolio-title">Portfolio</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="#Contact_Me">Contact Me</a></li>
+        <li>
           <a class="arrow_btnLogin" href="logIn.html"><svg
             xmlns="http://www.w3.org/2000/svg"
             width="42"
@@ -619,8 +619,18 @@
               <img src="./img/image/branding.png" alt="Eousva - Product Branding">
               <div class="grid-item-text">Eousva - Product Branding</div>
             </div>
+            <div class="grid-item showproject">
+              <img src="./img/image/web des.png" alt="Website Designing">
+              <div class="grid-item-text">Website Designing</div>
+            </div>
+            <div class="grid-item showproject">
+              <img src="./img/image/iot prototype.png" alt="UX/UI Graphic Designing">
+              <div class="grid-item-text">UX/UI - Graphic Designing</div>
+            </div>
+            
+    
           </div>
-          <div class="arrow_btn mgContact">
+          <div class="arrow_btn mgContact" id="view-all-project">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="42"
@@ -631,7 +641,7 @@
               <circle cx="18" cy="18" r="18" fill="#A6A001" />
             </svg>
             <div class="text">
-              <p class="viewAllProject-btn"><a href="#Contact_Me">View All project</a></p>
+              <p class="viewAllProject-btn">View All project</p>
               <svg
                 class="contact-btnArrow"
                 xmlns="http://www.w3.org/2000/svg"
@@ -814,7 +824,7 @@
                 placeholder="phone number"
                 
               />
-              <div class="error" id="phoneNUmber-error"></div>
+              <div class="error" id="phoneNumber-error"></div>
             </div>
           </div>
           <div class="textarea-field field">
@@ -828,7 +838,7 @@
               class="itemMessage"
               
             ></textarea>
-            <div class="message-error">heloo</div>
+            <div class="message-error" id="message-error"></div>
           </div>
           <button class="submitbtn" type="submit">Submitt</button>
         </form>
