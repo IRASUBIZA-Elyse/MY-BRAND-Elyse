@@ -19,30 +19,53 @@ document.getElementById("menu-button").addEventListener("click", function () {
 // const password = document.forms["form"]["password"];
 // const password = document.getElementById("password");
 
-const submit = document.getElementById("SubmittButton");
+// const submit = document.getElementById("SubmittButton");
+// const form = document.getElementById("form");
+// const username = document.getElementById("username");
+// const password = document.getElementById("password");
+
+// const usernameError = document.getElementById("username-error").value;
+// const passwordError = document.getElementById("password-error").value;
+
+// form.addEventListener("submit", (e) => {
+//   if (username.value === "" || username.value == null) {
+//     e.preventDefault();
+//     usernameError.innerHTML = "username required";
+//   }
+//   if (password.value.length < 10) {
+//     e.preventDefault();
+//     passwordError.innerHTML = "password must have atleast 8 character";
+//   }
+//   if (password.value === "" || password.value == null) {
+//     e.preventDefault();
+//     passwordError.innerHTML = "password must have atleast 8 character";
+//   }
+// });
+
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
+const usernameError = document.getElementById("username-error");
+const passwordError = document.getElementById("password-error");
 
-const usernameError = document.getElementById("username-error").value;
-const passwordError = document.getElementById("password-error").value;
+form.addEventListener("submit", (e) => {
+  let isValid = true;
 
-// form.addEventListener("submit", (e) => {
-//   let message = [];
-//   if (password.value === "" || password.value == null) {
-//     message.push("username required");
-//   }
-//   if (message.length > 0) {
-//     e.preventDefault();
-//     password.innerText = message.join(", ");
-//     password.style.display = "block";
-//   }
-//   // validate();
-// });
-function validate() {
-  if (email.value.length < 9) {
-    email.style.border = "1px solid red";
-    email.focus();
-    return false;
+  if (username.value.trim() === "") {
+    isValid = false;
+    usernameError.textContent = "Username is required";
+  } else {
+    usernameError.textContent = "";
   }
-}
+
+  if (password.value.trim() === "") {
+    isValid = false;
+    passwordError.textContent = "Password is required";
+  } else {
+    passwordError.textContent = "";
+  }
+
+  if (!isValid) {
+    e.preventDefault();
+  }
+});
