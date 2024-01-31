@@ -43,7 +43,7 @@ const messageError = document.getElementById("message-error");
 
 form.addEventListener("submit", (e) => {
   let email_check = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  let phone_check = /^\+2507[0-9]{8}$/;
+  let phone_check = /^\+2507[8923][0-9]{7}$/;
   let isValid = true;
 
   if (firstName.value === "" || firstName.value == null) {
@@ -74,8 +74,7 @@ form.addEventListener("submit", (e) => {
     phoneNumberError.innerHTML = "phone number is required";
   } else if (!phoneNumber.value.match(phone_check)) {
     isValid = false;
-    phoneNumberError.innerHTML =
-      "valid phonenumber is required and start with +250";
+    phoneNumberError.innerHTML = "valid phonenumber is required";
   } else {
     phoneNumberError.innerHTML = "";
   }
@@ -105,39 +104,3 @@ viewAllProject.addEventListener("click", () => {
     ? "show Less"
     : "View All project";
 });
-
-// single blog
-
-// create blog validation
-// var quill = new Quill("#editor-container", {
-//   theme: "snow", // Specify theme ('snow' or 'bubble')
-// });
-// document
-//   .getElementById("createBlogForm")
-//   .addEventListener("submit", function (event) {
-//     event.preventDefault();
-//     let title = document.getElementById("createBlog-title").value.trim();
-//     let content = quill.root.innerHTML.trim();
-//     let titleError = document.getElementById("title-error");
-//     let contentError = document.getElementById("content-error");
-
-//     titleError.textContent = "";
-//     contentError.textContent = "";
-
-//     let isValid = true;
-
-//     if (title === "") {
-//       isValid = false;
-//       titleError.textContent = "Title is required.";
-//     }
-
-//     if (content === "<p><br></p>") {
-//       isValid = false;
-//       contentError.textContent = "Content is required.";
-//     }
-
-//     if (isValid) {
-//       // Form submission logic goes here
-//       console.log("Form submitted successfully!");
-//     }
-//   });
