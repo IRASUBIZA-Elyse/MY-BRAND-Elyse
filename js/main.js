@@ -107,47 +107,37 @@ viewAllProject.addEventListener("click", () => {
 });
 
 // single blog
-const formSingleBlog = document.getElementById("form-SingleBlog");
-const nameSingleBlog = document.getElementById("name-SingleBlog");
-const emailSingleBlog = document.getElementById("email-SingleBlog");
-const messageSingleBlog = document.getElementById("message-SingleBlog");
 
-const emailErrorSingleBlog = document.getElementById("email-errorSingleBlog");
-const NameError = document.getElementById("name-errorSingleBlog");
-const emailsingleBlogError = document.getElementById("email-errorSingleBlog");
-const messageErrorSingleBlog = document.getElementById(
-  "message-errorSingleBlog"
-);
+// create blog validation
+// var quill = new Quill("#editor-container", {
+//   theme: "snow", // Specify theme ('snow' or 'bubble')
+// });
+// document
+//   .getElementById("createBlogForm")
+//   .addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     let title = document.getElementById("createBlog-title").value.trim();
+//     let content = quill.root.innerHTML.trim();
+//     let titleError = document.getElementById("title-error");
+//     let contentError = document.getElementById("content-error");
 
-formSingleBlog.addEventListener("submit", (e) => {
-  let isValid = true;
-  let email_checkSingleBlog = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (nameSingleBlog.value === "") {
-    e.preventDefault();
-    NameError.innerHTML = "your name please";
-  } else {
-    NameError.innerHTML = "";
-  }
+//     titleError.textContent = "";
+//     contentError.textContent = "";
 
-  if (emailSingleBlog.value.trim() === "") {
-    isValid = false;
-    emailErrorSingleBlog.textContent = "email required";
-  } else if (!emailErrorSingleBlog.value.match(email_checkSingleBlog)) {
-    emailErrorSingleBlog.textContent = "";
-  } else {
-    emailErrorSingleBlog.textContent = "";
-  }
+//     let isValid = true;
 
-  if (messageSingleBlog.value === "" || messageSingleBlog.value == null) {
-    isValid = false;
-    messageErrorSingleBlog.innerHTML = "Enter your message";
-  } else if (messageSingleBlog.value.length < 10) {
-    messageErrorSingleBlog.innerHTML =
-      "your message should be atleast 10 characters";
-  } else {
-    messageErrorSingleBlog.innerHTML = "";
-  }
-  if (!isValid) {
-    e.preventDefault();
-  }
-});
+//     if (title === "") {
+//       isValid = false;
+//       titleError.textContent = "Title is required.";
+//     }
+
+//     if (content === "<p><br></p>") {
+//       isValid = false;
+//       contentError.textContent = "Content is required.";
+//     }
+
+//     if (isValid) {
+//       // Form submission logic goes here
+//       console.log("Form submitted successfully!");
+//     }
+//   });

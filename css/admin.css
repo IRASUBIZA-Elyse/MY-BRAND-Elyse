@@ -23,6 +23,10 @@ html {
 a {
   text-decoration: none;
 }
+.error {
+  color: #a6a001;
+  font-size: 13px;
+}
 .sidebar {
   position: sticky;
   top: 0;
