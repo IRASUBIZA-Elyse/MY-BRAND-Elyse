@@ -28,27 +28,27 @@ form.addEventListener("submit", (e) => {
   if (username.value.trim() === "" || username.value == null) {
     isValid = false;
     usernameError.innerHTML = "Username is required";
-  } else {
+  } else if (username.value.trim() === "henry") {
     usernameError.innerHTML = "";
+  } else {
+    usernameError.innerHTML = "invalid username";
   }
 
   if (password.value.trim() === "" || password.value == null) {
     isValid = false;
-
     passwordError.innerHTML = "Password is required";
-  } else if (password.value && password.value.length < 10) {
+  } else if (password.value.trim() == key) {
     isValid = false;
-    passwordError.innerHTML = "invalid password";
-  } else {
-    isValid = true;
     passwordError.innerHTML = "";
-    if (password.value.trim() == key) {
-    } else {
-      isValid = false;
-      passwordError.innerHTML = "incorrect password";
-    }
+  } else {
+    isValid = false;
+    passwordError.innerHTML = "incorrect password";
   }
 
+  if (password.value.trim() == key && username.value.trim() === "henry") {
+    isValid = true;
+    window.location.assign("Dashboard.html");
+  }
   if (!isValid) {
     e.preventDefault();
   }
