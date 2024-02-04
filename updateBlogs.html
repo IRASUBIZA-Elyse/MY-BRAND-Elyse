@@ -157,7 +157,7 @@
         </div>
       </div>
 
-      <div class="recent-contacts">
+      <form class="recent-contacts" id="updateBlogForm">
         <h2 class="recent-contactsTitle">update blogs:</h2>
         <div class="update">
           <div class="update-image">
@@ -196,19 +196,20 @@
               />
             </div>
             <div class="update-content">
-              <textarea id="tiny" name="" id="" cols="30" rows="10"></textarea>
+              <textarea id="summernote" name="" id="" cols="30" rows="10"></textarea>
             </div>
             
           </div>
         </div>
         <p class="btnAdmin">create</p>
-      </div>
+      </form>
     </div>
     <script>
       $(document).ready(function () {
             $("#summernote").summernote();
           });
      </script>
+     <script src="./js/updateBlog.js"></script>
     
   </body>
 </html>

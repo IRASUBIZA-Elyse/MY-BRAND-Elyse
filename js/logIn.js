@@ -20,6 +20,31 @@ const password = document.getElementById("password");
 const usernameError = document.getElementById("username-error");
 const passwordError = document.getElementById("password-error");
 
+username.addEventListener("keyup", (e) => {
+  console.log(e.key);
+  if (username.value.trim() === "" || username.value == null) {
+    isValid = false;
+    usernameError.innerHTML = "";
+  } else if (username.value.trim() === "henry") {
+    usernameError.innerHTML = "";
+  } else {
+    usernameError.innerHTML = "invalid username";
+  }
+});
+password.addEventListener("keyup", (e) => {
+  let key = "henryPc";
+  if (password.value.trim() === "" || password.value == null) {
+    isValid = false;
+    passwordError.innerHTML = "";
+  } else if (password.value.trim() == key) {
+    isValid = false;
+    passwordError.innerHTML = "";
+  } else {
+    isValid = false;
+    passwordError.innerHTML = "incorrect password";
+  }
+});
+
 form.addEventListener("submit", (e) => {
   let isValid = true;
   let key = "henryPc";
@@ -34,10 +59,11 @@ form.addEventListener("submit", (e) => {
     usernameError.innerHTML = "invalid username";
   }
 
-  if (password.value.trim() === "" || password.value == null) {
-    isValid = false;
-    passwordError.innerHTML = "Password is required";
-  } else if (password.value.trim() == key) {
+  // if (password.value.trim() === "" || password.value == null) {
+  //   isValid = false;
+  //   passwordError.innerHTML = "Password is required";
+  // } else
+  if (password.value.trim() == key) {
     isValid = false;
     passwordError.innerHTML = "";
   } else {

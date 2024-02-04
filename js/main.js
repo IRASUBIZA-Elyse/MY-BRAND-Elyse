@@ -41,6 +41,52 @@ const lastNameError = document.getElementById("lastName-error");
 const phoneNumberError = document.getElementById("phoneNumber-error");
 const messageError = document.getElementById("message-error");
 
+firstName.addEventListener("keyup", (e) => {
+  if (firstName.value === "" || firstName.value == null) {
+    isValid = false;
+    console.log(e);
+    firstNameError.innerHTML = "";
+  }
+});
+lastName.addEventListener("keyup", (e) => {
+  if (lastName.value === "" || lastName.value == null) {
+    isValid = false;
+    lastNameError.innerHTML = "";
+  }
+});
+email.addEventListener("keyup", (e) => {
+  if (email.value === "" || email.value == null) {
+    isValid = false;
+    emailError.innerHTML = "";
+  } else if (!email.value.match(email_check)) {
+    isValid = false;
+    emailError.innerHTML = "valid email is required";
+  } else {
+    emailError.innerHTML = "";
+  }
+});
+phoneNumber.addEventListener("keyup", (e) => {
+  let phone_check = /^\+2507[8923][0-9]{7}$/;
+  if (phoneNumber.value === "" || phoneNumber.value == null) {
+    isValid = false;
+    phoneNumberError.innerHTML = "";
+  } else if (!phoneNumber.value.match(phone_check)) {
+    isValid = false;
+    phoneNumberError.innerHTML = "valid phonenumber is required";
+  } else {
+    phoneNumberError.innerHTML = "";
+  }
+});
+message.addEventListener("keyup", (e) => {
+  if (message.value === "" || message.value == null) {
+    isValid = false;
+    messageError.innerHTML = "";
+  } else if (message.value.length < 10) {
+    messageError.innerHTML = "your message should be atleast 10 characters";
+  } else {
+    messageError.innerHTML = "";
+  }
+});
 form.addEventListener("submit", (e) => {
   let email_check = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let phone_check = /^\+2507[8923][0-9]{7}$/;
@@ -97,7 +143,7 @@ let gridProject = document.querySelector(".grid-container");
 let viewAllProject = document.querySelector("#view-all-project");
 viewAllProject.addEventListener("click", () => {
   let viewText = document.querySelector(".viewAllProject-btn");
-  console.log("hii");
+  // console.log("hii");
   // showproject.style.display = "block";
   gridProject.classList.toggle("more");
   viewText.innerHTML = gridProject.classList.contains("more")

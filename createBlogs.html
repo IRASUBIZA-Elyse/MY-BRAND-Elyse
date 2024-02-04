@@ -160,9 +160,9 @@
         <h2 class="recent-contactsTitle">update blogs:</h2>
         <div class="update">
           <div class="update-image">
-            <img src="" alt="" />
+            <img src="./img/product.png" alt="" />
             <i class="fa-solid fa-cloud-arrow-up svgPhoto"></i>
-            <input type="file" accept="image/jpeg, image/png, image/jpg">
+            <!-- <input type="file" accept="image/jpeg, image/png, image/jpg"> -->
           </div>
           <div>
             <div class="update-title">
@@ -177,7 +177,7 @@
             </div>
 
             <div class="update-content">
-              <textarea  id="summernote" name="" cols="30" rows="10"></textarea>
+              <textarea  id="summernote" name="" cols="30" rows="10" class="createBlog-textarea"></textarea>
             </div>
             <div class="content-error"></div>
             
@@ -193,41 +193,7 @@
         $("#summernote").summernote();
       });
  </script>
- <script>
- document
-   .getElementById("createBlogForm")
-   .addEventListener("submit", function (event) {
-     event.preventDefault();
-     let title = document.getElementById("createBlog-title").value.trim();
-     let content = document.getElementById("summernote");
-     let titleError = document.getElementById("title-error");
-     let contentError = document.querySelector(".content-error");
- 
-     titleError.textContent = "";
-     contentError.textContent = "";
- 
-     let isValid = true;
- 
-     if (title === "") {
-       isValid = false;
-       titleError.textContent = "Title is required.";
-   }else{
-    title.textContent = ""
-   }
- 
-     if (content.value === "") {
-       isValid = false;
-       contentError.textContent = "Content is required.";
-     } else{
-      contentError.textContent = "";
-     }
- 
-     if (isValid) {
-       // Form submission logic goes here
-       console.log("Form submitted successfully!");
-     }
-   });
- </script>
+ <script src="./js/createBlog.js"></script>
 
 </body>
 </html>
