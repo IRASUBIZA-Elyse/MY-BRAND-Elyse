@@ -6,6 +6,8 @@ let blogTitle = document.querySelector(".blogTitle");
 let blogSummary = document.querySelector(".blogSummary");
 let createButton = document.querySelector(".btnAdmin");
 let formCreateBlog = document.querySelector("#createBlogForm");
+let date = document.querySelector(".date");
+let author = document.querySelector(".henry");
 const contentTextarea = document.querySelector(".createBlog-textarea");
 
 formCreateBlog.addEventListener("submit", (e) => {
@@ -13,6 +15,8 @@ formCreateBlog.addEventListener("submit", (e) => {
   const allBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
   const singleBlog = {
     title: title.value,
+    author: author.value,
+    date: date.value,
     content: content.value,
     image: "./img/product.png",
     comments: [],
@@ -21,6 +25,8 @@ formCreateBlog.addEventListener("submit", (e) => {
   allBlogs.push(singleBlog);
   localStorage.setItem("blogs", JSON.stringify(allBlogs));
   // console.log(singleBlog);
+  title.innerHTML = "";
+  content.innerHTML = "";
 });
 
 // validating

@@ -21,7 +21,7 @@ const usernameError = document.getElementById("username-error");
 const passwordError = document.getElementById("password-error");
 
 username.addEventListener("keyup", (e) => {
-  console.log(e.key);
+  // console.log(e.key);
   if (username.value.trim() === "" || username.value == null) {
     isValid = false;
     usernameError.innerHTML = "";
@@ -59,11 +59,10 @@ form.addEventListener("submit", (e) => {
     usernameError.innerHTML = "invalid username";
   }
 
-  // if (password.value.trim() === "" || password.value == null) {
-  //   isValid = false;
-  //   passwordError.innerHTML = "Password is required";
-  // } else
-  if (password.value.trim() == key) {
+  if (password.value.trim() === "" || password.value == null) {
+    isValid = false;
+    passwordError.innerHTML = "Password is required";
+  } else if (password.value.trim() == key) {
     isValid = false;
     passwordError.innerHTML = "";
   } else {

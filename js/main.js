@@ -55,6 +55,7 @@ lastName.addEventListener("keyup", (e) => {
   }
 });
 email.addEventListener("keyup", (e) => {
+  let email_check = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (email.value === "" || email.value == null) {
     isValid = false;
     emailError.innerHTML = "";
@@ -66,7 +67,8 @@ email.addEventListener("keyup", (e) => {
   }
 });
 phoneNumber.addEventListener("keyup", (e) => {
-  let phone_check = /^\+2507[8923][0-9]{7}$/;
+  let phone_check = /^\07[8923][0-9]{7}$/;
+
   if (phoneNumber.value === "" || phoneNumber.value == null) {
     isValid = false;
     phoneNumberError.innerHTML = "";
@@ -89,7 +91,7 @@ message.addEventListener("keyup", (e) => {
 });
 form.addEventListener("submit", (e) => {
   let email_check = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  let phone_check = /^\+2507[8923][0-9]{7}$/;
+  let phone_check = /^\07[8923][0-9]{7}$/;
   let isValid = true;
 
   if (firstName.value === "" || firstName.value == null) {

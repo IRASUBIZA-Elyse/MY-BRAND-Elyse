@@ -126,6 +126,7 @@ html {
   padding-top: 3px;
   /* padding-left: 10px; */
 }
+
 .menu {
   display: none;
 }
@@ -541,6 +542,13 @@ svg.svgAboutMe {
   height: 220px;
   padding-bottom: 50px;
 }
+.blogSummary {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .svgForBlogs {
   display: flex;
 }
@@ -712,7 +720,9 @@ ul {
   width: 100%;
   margin: 10px 10px;
 }
-
+.singlePage {
+  cursor: pointer;
+}
 /* single blog */
 .single-blog {
   margin-top: 20px;
