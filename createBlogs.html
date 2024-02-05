@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>create blog</title>
+    
     <script
       src="https://kit.fontawesome.com/8db6657193.js"
       crossorigin="anonymous"
@@ -174,8 +175,8 @@
                 class="name-input"
               />
               <div id="title-error" class="create-error error"></div>
-              <input type="text" name="" id="" placeholder="author..." class="name-input">
-              <input type="text" name="" id="" placeholder="date..." class="name-input">
+              <input type="text" name="" id="authorName" placeholder="author..." class="name-input">
+              <input type="date" name="" id="Date" placeholder="date..." class="name-input">
             </div>
 
             <div class="update-content">
@@ -195,7 +196,7 @@
         $("#summernote").summernote();
       });
  </script>
- <script src="./js/createBlog.js"></script>
+ <script src="./js/createBlog.js" type="module"></script>
 
 </body>
 </html>

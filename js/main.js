@@ -41,44 +41,55 @@ const lastNameError = document.getElementById("lastName-error");
 const phoneNumberError = document.getElementById("phoneNumber-error");
 const messageError = document.getElementById("message-error");
 
-firstName.addEventListener("keyup", (e) => {
-  if (firstName.value === "" || firstName.value == null) {
-    isValid = false;
-    console.log(e);
-    firstNameError.innerHTML = "";
-  }
-});
-lastName.addEventListener("keyup", (e) => {
-  if (lastName.value === "" || lastName.value == null) {
-    isValid = false;
-    lastNameError.innerHTML = "";
-  }
-});
-email.addEventListener("keyup", (e) => {
-  let email_check = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (email.value === "" || email.value == null) {
-    isValid = false;
-    emailError.innerHTML = "";
-  } else if (!email.value.match(email_check)) {
-    isValid = false;
-    emailError.innerHTML = "valid email is required";
-  } else {
-    emailError.innerHTML = "";
-  }
-});
-phoneNumber.addEventListener("keyup", (e) => {
-  let phone_check = /^\07[8923][0-9]{7}$/;
+if (firstName) {
+  firstName.addEventListener("keyup", (e) => {
+    if (firstName.value === "" || firstName.value == null) {
+      isValid = false;
+      console.log(e);
+      firstNameError.innerHTML = "";
+    }
+  });
+}
+if (lastName) {
+  lastName.addEventListener("keyup", (e) => {
+    if (lastName.value === "" || lastName.value == null) {
+      isValid = false;
+      lastNameError.innerHTML = "";
+    } else if (lastName.value.length < 3) {
+      lastNameError.innerHTML = "should atleast be 3 characters";
+    }
+  });
+}
+if (email) {
+  email.addEventListener("keyup", (e) => {
+    let email_check = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email.value === "" || email.value == null) {
+      isValid = false;
+      emailError.innerHTML = "";
+    } else if (!email.value.match(email_check)) {
+      isValid = false;
+      emailError.innerHTML = "valid email is required";
+    } else {
+      emailError.innerHTML = "";
+    }
+  });
+}
+if (phoneNumber) {
+  phoneNumber.addEventListener("keyup", (e) => {
+    let phone_check = /^\07[8923][0-9]{7}$/;
 
-  if (phoneNumber.value === "" || phoneNumber.value == null) {
-    isValid = false;
-    phoneNumberError.innerHTML = "";
-  } else if (!phoneNumber.value.match(phone_check)) {
-    isValid = false;
-    phoneNumberError.innerHTML = "valid phonenumber is required";
-  } else {
-    phoneNumberError.innerHTML = "";
-  }
-});
+    if (phoneNumber.value === "" || phoneNumber.value == null) {
+      isValid = false;
+      phoneNumberError.innerHTML = "";
+    } else if (!phoneNumber.value.match(phone_check)) {
+      isValid = false;
+      phoneNumberError.innerHTML = "valid phonenumber is required 07..";
+    } else {
+      phoneNumberError.innerHTML = "";
+    }
+  });
+}
+
 message.addEventListener("keyup", (e) => {
   if (message.value === "" || message.value == null) {
     isValid = false;

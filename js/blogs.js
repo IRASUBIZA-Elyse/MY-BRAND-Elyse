@@ -3,8 +3,7 @@ const Blogs = JSON.parse(localStorage.getItem("blogs")) || [];
 // console.log(Blogs);
 let allBlogshtml = "";
 Blogs.forEach((blg) => {
-  console.log(Blogs);
-  `<div class="container blogsBox">
+  `<div class="container blogsBox" key=${blg.id}>
 <div class="blogImage">
 
 </div>
@@ -92,6 +91,14 @@ Blogs.forEach((blg) => {
 `;
 });
 containers.innerHTML = allBlogshtml;
+
+const blogs = document.querySelectorAll(".blogBox");
+blogs.forEach((blg) => {
+  blg.addEventListener("click", (e) => {
+    const id = e.target.closest(".blogBox").getAttribute("key");
+    console.log(id);
+  });
+});
 
 // scroll effect
 window.addEventListener("scroll", function () {
