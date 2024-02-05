@@ -1,8 +1,9 @@
 const container = document.querySelector(".blogs");
 const sameBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
 let blogshtml = "";
-for (let i = 0; i < 3; i++) {
-  blogshtml += `<div class="blog">
+const max = sameBlogs.length < 3 ? sameBlogs.length : 3;
+for (let i = 0; i < max; i++) {
+  blogshtml += `<div class="blog" key=${sameBlogs[i].id}>
   
   <div class="blogImg">
     <img src="./img/blogpic 1.png" alt="blog img" />
@@ -33,12 +34,19 @@ for (let i = 0; i < 3; i++) {
     </svg></div>
   </div>
 </div>`;
-
-  container.addEventListener("click", (e) => {
-    let target = e.target;
-    if (target.classList.contains("singlePage")) {
-      window.location.href = "../singleBlogPage.html?id=" + i;
-    }
-  });
 }
 container.innerHTML = blogshtml;
+// container.addEventListener("click", (e) => {
+//   let target = e.target;
+//   if (target.classList.contains("singlePage")) {
+//     window.location.href = "../singleBlogPage.html?id=" + i;
+//   }
+// });
+
+const blogs = document.querySelectorAll(".blog");
+blogs.forEach((blg) => {
+  blg.addEventListener("click", (e) => {
+    const id = e.target.closest(".blog").getAttribute("key");
+    window.location.href = `./singleBlogPage.html?id=${id}`;
+  });
+});

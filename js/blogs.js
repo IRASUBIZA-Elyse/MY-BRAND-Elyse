@@ -3,10 +3,10 @@ const Blogs = JSON.parse(localStorage.getItem("blogs")) || [];
 // console.log(Blogs);
 let allBlogshtml = "";
 Blogs.forEach((blg) => {
-  console.log(Blogs);
-  `<div class="container blogsBox">
+  allBlogshtml += `<div class="container blogsBox" key=${blg.id}>
 <div class="blogImage">
-
+<img src="./img/blogpic 3.png" alt="blog images" />
+${blg.image}
 </div>
 <div class="BlogContent">
   <h2 class="blogHeading">
@@ -18,8 +18,8 @@ Blogs.forEach((blg) => {
   </p>
 </div>
 <div class="authorDate">
-  <p>Date: 10/2/2024</p>
-  <p>Author: Henry</p>
+  <p>Date: <span>10/2/2024</span> </p>
+  <p>Author:<span>Henry</span> </p>
 </div>
 
 <div class="svgPosition svgForBlogs">
@@ -92,6 +92,15 @@ Blogs.forEach((blg) => {
 `;
 });
 containers.innerHTML = allBlogshtml;
+
+const blogs = document.querySelectorAll(".blogsBox");
+blogs.forEach((blg) => {
+  blg.addEventListener("click", (e) => {
+    const id = e.target.closest(".blogsBox").getAttribute("key");
+    console.log(id);
+    window.location.href = `./singleBlogPage.html?id=${id}`;
+  });
+});
 
 // scroll effect
 window.addEventListener("scroll", function () {
