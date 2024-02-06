@@ -3,7 +3,11 @@ const Blogs = JSON.parse(localStorage.getItem("blogs")) || [];
 // console.log(Blogs);
 let allBlogshtml = "";
 Blogs.forEach((blg) => {
+<<<<<<< HEAD
   allBlogshtml += `<div class="container blogsBox" key=${blg.id}>
+=======
+  `<div class="container blogsBox" key=${blg.id}>
+>>>>>>> c2620e705f754b7101a01d269648cc0af784b9f8
 <div class="blogImage">
 <img src="./img/blogpic 3.png" alt="blog images" />
 ${blg.image}
@@ -93,12 +97,20 @@ ${blg.image}
 });
 containers.innerHTML = allBlogshtml;
 
+<<<<<<< HEAD
 const blogs = document.querySelectorAll(".blogsBox");
 blogs.forEach((blg) => {
   blg.addEventListener("click", (e) => {
     const id = e.target.closest(".blogsBox").getAttribute("key");
     console.log(id);
     window.location.href = `./singleBlogPage.html?id=${id}`;
+=======
+const blogs = document.querySelectorAll(".blogBox");
+blogs.forEach((blg) => {
+  blg.addEventListener("click", (e) => {
+    const id = e.target.closest(".blogBox").getAttribute("key");
+    console.log(id);
+>>>>>>> c2620e705f754b7101a01d269648cc0af784b9f8
   });
 });
 

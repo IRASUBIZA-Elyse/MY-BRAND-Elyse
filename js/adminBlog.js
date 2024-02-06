@@ -21,12 +21,18 @@ allBlogs.forEach((blg) => {
 </div>
 
 <div class="svgPosition buttonsAdmin">
+<<<<<<< HEAD
   <div><a href="updateBlogs.html" class="btnAdmin edittingBlog">edit</a></div>
   <div class="btnAdmin deleteBlog">delete</div>
+=======
+  <div><a href="updateBlogs.html" class="btnAdmin">edit</a></div>
+  <div class="btnAdmin">delete</div>
+>>>>>>> c2620e705f754b7101a01d269648cc0af784b9f8
 </div>
 </div>`;
 });
 blogsAdmin.innerHTML = blogs;
+<<<<<<< HEAD
 
 const removeBlogs = document.querySelectorAll(".blogsBox");
 const removeButton = document.querySelector(".deleteBlog");
@@ -50,3 +56,5 @@ removeBlogs.forEach((removeButton, editButton) => {
   //   console.log(allBlogs);
   // });
 });
+=======
+>>>>>>> c2620e705f754b7101a01d269648cc0af784b9f8
