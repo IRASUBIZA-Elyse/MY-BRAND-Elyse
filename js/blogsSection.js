@@ -3,6 +3,12 @@ const sameBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
 let blogshtml = "";
 const max = sameBlogs.length < 3 ? sameBlogs.length : 3;
 for (let i = 0; i < max; i++) {
+  let length = 90;
+  let string = sameBlogs[i].content;
+  let result = addThreeDotsAfterLength(string, length);
+  function addThreeDotsAfterLength(string, length) {
+    return string.length > length ? string.slice(0, length) + "..." : string;
+  }
   blogshtml += `<div class="blog" key=${sameBlogs[i].id}>
   
   <div class="blogImg">
@@ -13,7 +19,7 @@ for (let i = 0; i < max; i++) {
   </div>
   <div class="blog-summary">
     <p class="blogSummary">
-      ${sameBlogs[i].content}
+      ${result}
     </p>
   </div>
   <a href=""><span class="text_primary singlePage">read more<span></a>
@@ -36,12 +42,6 @@ for (let i = 0; i < max; i++) {
 </div>`;
 }
 container.innerHTML = blogshtml;
-// container.addEventListener("click", (e) => {
-//   let target = e.target;
-//   if (target.classList.contains("singlePage")) {
-//     window.location.href = "../singleBlogPage.html?id=" + i;
-//   }
-// });
 
 const blogs = document.querySelectorAll(".blog");
 blogs.forEach((blg) => {

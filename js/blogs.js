@@ -2,22 +2,25 @@ const containers = document.querySelector(".allBlogs");
 const Blogs = JSON.parse(localStorage.getItem("blogs")) || [];
 // console.log(Blogs);
 let allBlogshtml = "";
-Blogs.forEach((blg) => {
-<<<<<<< HEAD
-  allBlogshtml += `<div class="container blogsBox" key=${blg.id}>
-=======
-  `<div class="container blogsBox" key=${blg.id}>
->>>>>>> c2620e705f754b7101a01d269648cc0af784b9f8
+let max = Blogs.length;
+for (let i = 0; i < max; i++) {
+  let length = 90;
+  let string = Blogs[i].content;
+  let result = addThreeDotsAfterLength(string, length);
+  function addThreeDotsAfterLength(string, length) {
+    return string.length > length ? string.slice(0, length) + "..." : string;
+  }
+  allBlogshtml += `<div class="container blogsBox" key=${Blogs[i].id}>
 <div class="blogImage">
 <img src="./img/blogpic 3.png" alt="blog images" />
-${blg.image}
+${Blogs[i].image}
 </div>
 <div class="BlogContent">
   <h2 class="blogHeading">
-    <span class="text_primary">${blg.title}</span>
+    <span class="text_primary">${Blogs[i].title}</span>
   </h2>
   <p>
-    ${blg.content}
+    ${result}
     <span class="text_primary">Readmore</span>
   </p>
 </div>
@@ -28,7 +31,7 @@ ${blg.image}
 
 <div class="svgPosition svgForBlogs">
   <div class="feedback comment">
-    <p class="commentNumber">${blg.comment}</p>
+    <p class="commentNumber">${Blogs[i].comment}</p>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="26"
@@ -43,7 +46,7 @@ ${blg.image}
     </svg>
   </div>
   <div class="feedback likes">
-    <p class="likesNumber">${blg.likes}</p>
+    <p class="likesNumber">${Blogs[i].likes}</p>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="26"
@@ -94,23 +97,16 @@ ${blg.image}
 </div>
 </div>
 `;
-});
+}
+// Blogs.forEach((blg) => {});
 containers.innerHTML = allBlogshtml;
 
-<<<<<<< HEAD
 const blogs = document.querySelectorAll(".blogsBox");
 blogs.forEach((blg) => {
   blg.addEventListener("click", (e) => {
     const id = e.target.closest(".blogsBox").getAttribute("key");
     console.log(id);
     window.location.href = `./singleBlogPage.html?id=${id}`;
-=======
-const blogs = document.querySelectorAll(".blogBox");
-blogs.forEach((blg) => {
-  blg.addEventListener("click", (e) => {
-    const id = e.target.closest(".blogBox").getAttribute("key");
-    console.log(id);
->>>>>>> c2620e705f754b7101a01d269648cc0af784b9f8
   });
 });
 
