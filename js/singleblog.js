@@ -28,7 +28,7 @@ single.innerHTML = `<h2 class="BLOGS">
 </h2>
 <div class="single-blog">
   <div class="singleBlog-image">
-    <img src="./img/blogpic 1.png" alt="blog image" />
+    <img src="${choosenBlog.img}" alt="blog image" />
   </div>
   <div class="column2">
     <p class="blog-text">

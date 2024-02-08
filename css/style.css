@@ -1057,6 +1057,9 @@ ul {
     .column2 {
       margin-bottom: 50px;
     }
+    .field .itemBlog {
+      width: 300px;
+    }
   }
   @media screen and (max-width: 795px) {
     .navbar ul {

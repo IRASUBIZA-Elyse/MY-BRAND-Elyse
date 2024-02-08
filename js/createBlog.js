@@ -5,26 +5,35 @@ let titleError = document.getElementById("title-error");
 let contentError = document.querySelector(".content-error");
 let blogTitle = document.querySelector(".blogTitle");
 let blogSummary = document.querySelector(".blogSummary");
-let createButton = document.querySelector(".btnAdmin");
 let formCreateBlog = document.querySelector("#createBlogForm");
 let date = document.querySelector("#Date");
 let author = document.querySelector("#authorName");
 let authorError = document.querySelector("#author-error");
 let dateError = document.querySelector("#date-error");
-let image = document.querySelector(".image-lc");
-// const contentTextarea = document.querySelector(".createBlog-textarea");
-// console.log(author.value);
+
+const imageInput = document.querySelector(".update-image");
+const fileInput = document.querySelector("#image-file");
+let imageUrl = "";
+
+imageInput.addEventListener("click", () => {
+  fileInput.click();
+});
+
+fileInput.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  const reader = new FileReader();
+
+  reader.onloadend = () => {
+    imageInput.style.backgroundImage = `url(${reader.result})`;
+    imageUrl = reader.result;
+  };
+
+  reader.readAsDataURL(file);
+});
+
 formCreateBlog.addEventListener("submit", (e) => {
   e.preventDefault();
   e.stopPropagation();
-  // image.addEventListener("change", () => {
-  //   const fr = new FileReader();
-  //   fr.readAsDataURL(image.files[0]);
-  //   fr.addEventListener("load", () => {
-  //     const url = fr.result;
-  //   });
-  // });
-  // console.log("hii");
   let isValid = true;
 
   if (title.value === "") {
@@ -43,11 +52,11 @@ formCreateBlog.addEventListener("submit", (e) => {
 
   if (isValid) {
     // Form submission logic goes here
-    console.log("Form submitted successfully!");
   }
 
   const rareId = uuidv4();
   const allBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
   const contentTags = content.value.replace(/<p>/g, "").replace(/<\/p>/g, "");
   const singleBlog = {
     id: rareId,
@@ -55,11 +64,18 @@ formCreateBlog.addEventListener("submit", (e) => {
     author: author.value,
     date: date.value,
     content: contentTags,
-    // img: image.scr,
+    img: imageUrl,
     comments: [],
     likes: 0,
   };
   allBlogs.push(singleBlog);
   localStorage.setItem("blogs", JSON.stringify(allBlogs));
   // console.log(singleBlog);
+  alert("Form submitted successfully!");
+  title.value = "";
+  author.value = "";
+  content.value = "";
+  date.value = "";
+  imageUrl = "";
+  window.location.href = "./Dashboard.html";
 });

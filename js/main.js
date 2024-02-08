@@ -47,6 +47,10 @@ if (firstName) {
       isValid = false;
       console.log(e);
       firstNameError.innerHTML = "";
+    } else if (lastName.value.length < 3) {
+      firstNameError.innerHTML = "should atleast be 3 characters";
+    } else {
+      firstNameError.innerHTML = "";
     }
   });
 }
@@ -57,6 +61,8 @@ if (lastName) {
       lastNameError.innerHTML = "";
     } else if (lastName.value.length < 3) {
       lastNameError.innerHTML = "should atleast be 3 characters";
+    } else {
+      lastNameError.innerHTML = "";
     }
   });
 }
@@ -81,9 +87,9 @@ if (phoneNumber) {
     if (phoneNumber.value === "" || phoneNumber.value == null) {
       isValid = false;
       phoneNumberError.innerHTML = "";
-    } else if (!phoneNumber.value.match(phone_check)) {
+    } else if (phoneNumber.value.match(phone_check)) {
       isValid = false;
-      phoneNumberError.innerHTML = "valid phonenumber is required 07..";
+      phoneNumberError.innerHTML = "valid phonenumber";
     } else {
       phoneNumberError.innerHTML = "";
     }

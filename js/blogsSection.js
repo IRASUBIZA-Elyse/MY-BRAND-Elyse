@@ -12,7 +12,7 @@ for (let i = 0; i < max; i++) {
   blogshtml += `<div class="blog" key=${sameBlogs[i].id}>
   
   <div class="blogImg">
-    <img src="./img/blogpic 1.png" alt="blog img" />
+    <img src="${sameBlogs[i].img}" alt="blog img" />
   </div>
   <div class="blog-title">
     <p class="blogTitle"><b>${sameBlogs[i].title}</b></p>

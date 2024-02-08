@@ -12,8 +12,8 @@ for (let i = 0; i < max; i++) {
   }
   allBlogshtml += `<div class="container blogsBox" key=${Blogs[i].id}>
 <div class="blogImage">
-<img src="./img/blogpic 3.png" alt="blog images" />
-${Blogs[i].image}
+<img src="${Blogs[i].img}" alt="blog images" />
+
 </div>
 <div class="BlogContent">
   <h2 class="blogHeading">
@@ -26,7 +26,7 @@ ${Blogs[i].image}
 </div>
 <div class="authorDate">
   <p>Date: <span>10/2/2024</span> </p>
-  <p>Author:<span>Henry</span> </p>
+  <p>Author:<span>${Blogs[i].author}</span> </p>
 </div>
 
 <div class="svgPosition svgForBlogs">

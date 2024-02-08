@@ -2,7 +2,7 @@ const allBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
 const blogsAdmin = document.querySelector(".blogsAdmin");
 let blogs = "";
 allBlogs.forEach((blg) => {
-  let length = 90;
+  let length = 100;
   let string = blg.content;
   let result = addThreeDotsAfterLength(string, length);
   function addThreeDotsAfterLength(string, length) {
@@ -10,7 +10,7 @@ allBlogs.forEach((blg) => {
   }
   blogs += `<div class="container blogsBox" key=${blg.id}>
 <div class="blogImage">
-  <img src="./img/blogpic 1.png" alt="blog images" />
+  <img src="${blg.img}" alt="blog images" />
 </div>
 <div class="BlogContent">
   <h2 class="blogHeading">
@@ -18,7 +18,7 @@ allBlogs.forEach((blg) => {
   </h2>
   <p>
     ${result}
-    <span class="text_primary">Readmore</span>
+    
   </p>
 </div>
 <div class="authorDate">
