@@ -38,44 +38,56 @@ formCreateBlog.addEventListener("submit", (e) => {
 
   if (title.value === "") {
     isValid = false;
-    titleError.textContent = "Title is required.";
+    titleError.innerText = "Title is required.";
   } else {
-    titleError.textContent = "";
+    titleError.innerText = "";
   }
 
   if (content.value === "") {
     isValid = false;
-    contentError.textContent = "Content is required.";
+    contentError.innerText = "Content is required.";
   } else {
-    contentError.textContent = "";
+    contentError.innerText = "";
+  }
+  if (author.value === "") {
+    isValid = false;
+    authorError.innerText = "author is required.";
+  } else {
+    authorError.innerText = "";
+  }
+  if (date.value === "") {
+    isValid = false;
+    dateError.innerText = "data is required.";
+  } else {
+    dateError.innerText = "";
   }
 
   if (isValid) {
+    const rareId = uuidv4();
+    const allBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+    // const contentTags = content.value.replace(/<p>/g, "").replace(/<\/p>/g, "");
+    const singleBlog = {
+      id: rareId,
+      title: title.value,
+      author: author.value,
+      date: date.value,
+      content: content.value,
+      img: imageUrl,
+      comments: [],
+      likes: 0,
+    };
+    allBlogs.push(singleBlog);
+    localStorage.setItem("blogs", JSON.stringify(allBlogs));
+    // console.log(singleBlog);
+    alert("Form submitted successfully!");
+    title.value = "";
+    author.value = "";
+    content.value = "";
+    date.value = "";
+    imageUrl = "";
+    window.location.href = "./Dashboard.html";
+
     // Form submission logic goes here
   }
-
-  const rareId = uuidv4();
-  const allBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
-
-  const contentTags = content.value.replace(/<p>/g, "").replace(/<\/p>/g, "");
-  const singleBlog = {
-    id: rareId,
-    title: title.value,
-    author: author.value,
-    date: date.value,
-    content: contentTags,
-    img: imageUrl,
-    comments: [],
-    likes: 0,
-  };
-  allBlogs.push(singleBlog);
-  localStorage.setItem("blogs", JSON.stringify(allBlogs));
-  // console.log(singleBlog);
-  alert("Form submitted successfully!");
-  title.value = "";
-  author.value = "";
-  content.value = "";
-  date.value = "";
-  imageUrl = "";
-  window.location.href = "./Dashboard.html";
 });
