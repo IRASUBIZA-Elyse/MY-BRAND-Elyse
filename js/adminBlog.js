@@ -22,7 +22,7 @@ allBlogs.forEach((blg) => {
   </p>
 </div>
 <div class="authorDate">
-  <p>Date: <span>${blg.auhtor}</span></p>
+  <p>Date: <span>${blg.date}</span></p>
   <p>Author: <span>${blg.author}</span></p>
 </div>
 

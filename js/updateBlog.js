@@ -23,13 +23,13 @@ if (choosenBlogIndex !== -1) {
     console.log("ok");
     e.preventDefault();
 
-    const contentTags = content.value.replace(/<p>/g, "").replace(/<\/p>/g, "");
+    // const contentTags = content.value.replace(/<p>/g, "").replace(/<\/p>/g, "");
     const updatedBlog = {
       ...choosenBlog,
       title: title.value,
       author: author.value,
       date: date.value,
-      content: contentTags,
+      content: content.value,
     };
     console.log(updatedBlog);
     allBlogs[choosenBlogIndex] = updatedBlog;
@@ -41,35 +41,3 @@ if (choosenBlogIndex !== -1) {
     windows.location.href = "./adminBlogs.html";
   });
 }
-
-// console.log(choosenBlog);
-
-//   console.log(e.target);
-//
-// e.stopPropagation();
-// let isValid = true;
-
-// if (title.value === "") {
-//   isValid = false;
-//   titleError.textContent = "Title is required.";
-// } else {
-//   titleError.textContent = "";
-// }
-
-// if (content.value === "") {
-//   isValid = false;
-//   contentError.textContent = "Content is required.";
-// } else {
-//   contentError.textContent = "";
-// }
-
-// if (isValid) {
-//   // Form submission logic goes here
-//   console.log("Form submitted successfully!");
-// }
-
-// const rareId = uuidv4();
-//
-// console.log(choosenBlog);
-// localStorage.setItem("blogs", JSON.stringify(allBlogs));
-// alert("updated");

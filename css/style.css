@@ -472,15 +472,23 @@ svg.svgAboutMe {
 
 .grid-item-text {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  width: 100%;
+  /* height: 100%; */
+  bottom: -100%;
+  left: 0px;
+  backdrop-filter: blur(4px);
   padding: 5px 10px;
   color: white;
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
+  border-radius: 20px;
+  background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 0%, #363501);
+  transition: bottom 0.4s;
 }
-
+.grid-item:hover .grid-item-text {
+  bottom: px;
+}
 .grid-item:nth-child(1),
 .grid-item:nth-child(4),
 .grid-item:nth-child(5) {
@@ -539,7 +547,8 @@ svg.svgAboutMe {
 }
 .blog .blogImg img {
   width: 100%;
-  height: 220px;
+  height: 100%;
+  object-fit: cover;
   padding-bottom: 50px;
 }
 .blogSummary {
