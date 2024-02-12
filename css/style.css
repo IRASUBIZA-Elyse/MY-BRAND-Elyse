@@ -324,6 +324,7 @@ svg.svgAboutMe {
 .logoName {
   font-size: 20px;
 }
+
 .skillSide {
   transform: rotate(-90deg);
   /* color: #fff; */
@@ -487,7 +488,7 @@ svg.svgAboutMe {
   transition: bottom 0.4s;
 }
 .grid-item:hover .grid-item-text {
-  bottom: px;
+  bottom: 0px;
 }
 .grid-item:nth-child(1),
 .grid-item:nth-child(4),
@@ -864,10 +865,7 @@ ul {
   margin-top: -10px;
   color: #a6a001;
 }
-/* .login-form #username-error,
-.login-form #password-error {
-  display: none;
-} */
+
 .input-group svg {
   position: absolute;
   left: 10px;
