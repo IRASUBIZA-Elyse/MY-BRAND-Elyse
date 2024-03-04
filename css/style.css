@@ -552,6 +552,11 @@ svg.svgAboutMe {
   object-fit: cover;
   padding-bottom: 50px;
 }
+.blogImg {
+  width: auto;
+  height: 250px;
+  border-radius: 20px;
+}
 .blogSummary {
   display: -webkit-box;
   -webkit-line-clamp: 2;
