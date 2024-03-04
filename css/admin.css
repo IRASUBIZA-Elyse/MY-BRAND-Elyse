@@ -179,6 +179,8 @@ a {
 }
 .blogImage img {
   width: 250px;
+  border-radius: 15px;
+  height: 200px;
 }
 .BlogContent {
   grid-area: 1/ 2/ 2/ -1;

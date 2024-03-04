@@ -1,16 +1,23 @@
-const allBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+//const allBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+const url = "https://my-brand-be-3ift.onrender.com";
 const blogsAdmin = document.querySelector(".blogsAdmin");
 let blogs = "";
-allBlogs.forEach((blg) => {
-  let length = 100;
-  let string = blg.content;
-  let result = addThreeDotsAfterLength(string, length);
-  function addThreeDotsAfterLength(string, length) {
-    return string.length > length ? string.slice(0, length) + "..." : string;
-  }
-  blogs += `<div class="container blogsBox" key=${blg.id}>
+fetch(url + "/api/blogs")
+  .then((res) => res.json())
+  .then((output) => {
+    console.log("output", output);
+    output.forEach((blg) => {
+      let length = 100;
+      let string = blg.content;
+      let result = addThreeDotsAfterLength(string, length);
+      function addThreeDotsAfterLength(string, length) {
+        return string.length > length
+          ? string.slice(0, length) + "..."
+          : string;
+      }
+      blogs += `<div class="container blogsBox" key=${blg._id}>
 <div class="blogImage">
-  <img src="${blg.img}" alt="blog images" />
+  <img src="${blg.image}" alt="blog images" />
 </div>
 <div class="BlogContent">
   <h2 class="blogHeading">
@@ -31,8 +38,9 @@ allBlogs.forEach((blg) => {
   <div class="btnAdmin deleteBlog">delete</div>
 </div>
 </div>`;
-});
-blogsAdmin.innerHTML = blogs;
+    });
+    blogsAdmin.innerHTML = blogs;
+  });
 
 const removeBlogs = document.querySelectorAll(".blogsBox");
 const removeButton = document.querySelectorAll(".deleteBlog");
