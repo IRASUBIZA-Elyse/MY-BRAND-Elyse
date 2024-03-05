@@ -7,8 +7,8 @@ let blogTitle = document.querySelector(".blogTitle");
 let blogSummary = document.querySelector(".blogSummary");
 let formCreateBlog = document.querySelector("#createBlogForm");
 let date = document.querySelector("#Date");
-let author = document.querySelector("#authorName");
-let authorError = document.querySelector("#author-error");
+// let author = document.querySelector("#authorName");
+// let authorError = document.querySelector("#author-error");
 let dateError = document.querySelector("#date-error");
 
 const imageInput = document.querySelector(".update-image");
@@ -49,12 +49,12 @@ formCreateBlog.addEventListener("submit", (e) => {
   } else {
     contentError.innerText = "";
   }
-  if (author.value === "") {
-    isValid = false;
-    authorError.innerText = "author is required.";
-  } else {
-    authorError.innerText = "";
-  }
+  // if (author.value === "") {
+  //   isValid = false;
+  //   authorError.innerText = "author is required.";
+  // } else {
+  //   authorError.innerText = "";
+  // }
   if (date.value === "") {
     isValid = false;
     dateError.innerText = "data is required.";
@@ -70,7 +70,7 @@ formCreateBlog.addEventListener("submit", (e) => {
     const singleBlog = {
       id: rareId,
       title: title.value,
-      author: author.value,
+      //author: author.value,
       date: date.value,
       content: content.value,
       img: imageUrl,
@@ -82,7 +82,7 @@ formCreateBlog.addEventListener("submit", (e) => {
     // console.log(singleBlog);
     alert("Form submitted successfully!");
     title.value = "";
-    author.value = "";
+    //author.value = "";
     content.value = "";
     date.value = "";
     imageUrl = "";
