@@ -717,6 +717,8 @@ ul {
 }
 .blogImage img {
   width: clamp(300px, 55%, 400px);
+  border-radius: 10px;
+  height: 200px;
 }
 .BlogContent {
   grid-area: 1/ 2/ 2/ -1;
@@ -751,6 +753,10 @@ ul {
 }
 .singleBlog-image {
   grid-area: 1/ 1/ 2/ 2;
+}
+.singleBlog-image img {
+  width: 350px;
+  height: 250px;
 }
 .comment-section {
   grid-area: 2/ 1/ -1/ 2;

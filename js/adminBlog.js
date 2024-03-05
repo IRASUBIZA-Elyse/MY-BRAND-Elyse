@@ -16,10 +16,10 @@ fetch(url + "/api/blogs")
           : string;
       }
       blogs += `<div class="container blogsBox" key=${blg._id}>
-<div class="blogImage">
+      <div class="blogImage">
   <img src="${blg.image}" alt="blog images" />
-</div>
-<div class="BlogContent">
+   </div>
+   <div class="BlogContent">
   <h2 class="blogHeading">
     <span class="text_primary">${blg.title}</span>
   </h2>
@@ -27,17 +27,17 @@ fetch(url + "/api/blogs")
     ${result}
     
   </p>
-</div>
-<div class="authorDate">
+   </div>
+  <div class="authorDate">
   <p>Date: <span>${blg.date}</span></p>
   <p>Author: <span>${blg.author}</span></p>
-</div>
+  </div>
 
-<div class="svgPosition buttonsAdmin">
+  <div class="svgPosition buttonsAdmin">
   <div class="btnAdmin edittingBlog">edit</div>
   <div class="btnAdmin deleteBlog">delete</div>
-</div>
-</div>`;
+  </div>
+  </div>`;
     });
     blogsAdmin.innerHTML = blogs;
   });
