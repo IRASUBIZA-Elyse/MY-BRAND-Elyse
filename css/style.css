@@ -552,6 +552,7 @@ svg.svgAboutMe {
   height: 100%;
   object-fit: cover;
   padding-bottom: 50px;
+  border-radius: 10px;
 }
 .blogImg {
   width: auto;
