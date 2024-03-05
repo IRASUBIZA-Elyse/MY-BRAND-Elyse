@@ -40,7 +40,7 @@ fetch(url + `/api/blogs/${blogId}`)
     </p>
     <div class="authorDate">
       <p>Date: <span class="date">${output.date}</span></p>
-      <p>Author: <span class="author">${output.author}</span></p>
+      <p>Author: <span class="author">Henry</span></p>
       <br><br>
       <div class="feedback likes"><p>${output.likes}</p><svg xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 26 22" fill="none">
         <g clip-path="url(#clip0_2457_55)">
