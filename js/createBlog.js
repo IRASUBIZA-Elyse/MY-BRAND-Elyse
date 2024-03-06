@@ -15,9 +15,9 @@ const imageInput = document.querySelector(".update-image");
 const fileInput = document.querySelector("#image-file");
 let imageUrl = "";
 
-imageInput.addEventListener("click", () => {
-  fileInput.click();
-});
+// imageInput.addEventListener("click", () => {
+//   fileInput.click();
+// });
 
 fileInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
@@ -55,39 +55,46 @@ formCreateBlog.addEventListener("submit", (e) => {
   // } else {
   //   authorError.innerText = "";
   // }
-  if (date.value === "") {
-    isValid = false;
-    dateError.innerText = "data is required.";
-  } else {
-    dateError.innerText = "";
-  }
+  // if (date.value === "") {
+  //   isValid = false;
+  //   dateError.innerText = "data is required.";
+  // } else {
+  //   dateError.innerText = "";
+  // }
 
   if (isValid) {
-    const rareId = uuidv4();
-    const allBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
-
-    // const contentTags = content.value.replace(/<p>/g, "").replace(/<\/p>/g, "");
-    const singleBlog = {
-      id: rareId,
-      title: title.value,
-      //author: author.value,
-      date: date.value,
-      content: content.value,
-      img: imageUrl,
-      comments: [],
-      likes: 0,
-    };
-    allBlogs.push(singleBlog);
-    localStorage.setItem("blogs", JSON.stringify(allBlogs));
-    // console.log(singleBlog);
-    alert("Form submitted successfully!");
-    title.value = "";
-    //author.value = "";
-    content.value = "";
-    date.value = "";
-    imageUrl = "";
-    window.location.href = "./Dashboard.html";
-
-    // Form submission logic goes here
+    createBlog();
   }
 });
+async function createBlog() {
+  //console.log(content.value);
+  const contentTags = content.value.replace(/<p>/g, "").replace(/<\/p>/g, "");
+  const contents = contentTags;
+  //console.log(contents);
+  const titles = title.value;
+  //console.log(titles);
+  const token = localStorage.getItem("token");
+  if (!fileInput.files || !fileInput.files[0]) {
+    console.error("Please select image");
+    return;
+  }
+  const formData = new FormData();
+  formData.append("title", titles);
+  formData.append("content", contents);
+  formData.append("image", fileInput.files[0]);
+
+  const url = "https://my-brand-be-3ift.onrender.com";
+
+  const response = await fetch(url + "/api/blogs", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: formData,
+  });
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+  const data = await response.json();
+  alert("Blog created successfully!!");
+}
