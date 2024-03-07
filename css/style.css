@@ -528,7 +528,7 @@ svg.svgAboutMe {
 }
 .BLOGS {
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   padding: 50px;
   padding-top: 30px;
   color: #a6a001;
@@ -787,6 +787,7 @@ ul {
   outline: none;
   border: 1px solid #a6a001;
   border-radius: 6px;
+  font-family: "Syne", sans-serif;
 }
 
 /* login page */
@@ -818,12 +819,13 @@ ul {
 }
 .input-group input {
   padding: 10px 10px 10px 40px;
-  width: 100%;
+  width: 250px;
   border: 1px solid #4b4b4b;
   border-radius: 10px;
   box-sizing: border-box;
   background-color: #4b4b4b;
   color: white;
+  outline: none;
 }
 .icon {
   position: absolute;
@@ -957,7 +959,13 @@ ul {
 .recent-contacts {
   margin: auto;
 }
-
+.recent-comment {
+  background-color: #1a1a00e1;
+  padding: 8px;
+}
+.border {
+  border: #000;
+}
 .recent-contactsTitle {
   margin-top: 20px;
   margin-left: 20px;
@@ -1078,7 +1086,8 @@ ul {
       margin-bottom: 50px;
     }
     .field .itemBlog {
-      width: 300px;
+      width: 83%;
+      margin: 12px 0px;
     }
   }
   @media screen and (max-width: 795px) {

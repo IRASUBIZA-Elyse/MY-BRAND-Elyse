@@ -80,7 +80,7 @@ async function createBlog() {
   }
   const formData = new FormData();
   formData.append("title", titles);
-  formData.append("content", contents);
+  formData.append("content", content.value);
   formData.append("image", fileInput.files[0]);
 
   const url = "https://my-brand-be-3ift.onrender.com";
@@ -97,4 +97,5 @@ async function createBlog() {
   }
   const data = await response.json();
   alert("Blog created successfully!!");
+  window.location.href = "./createBlogs.html";
 }

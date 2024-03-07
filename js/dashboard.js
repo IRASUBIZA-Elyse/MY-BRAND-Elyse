@@ -31,9 +31,9 @@ let recent = "";
 fetch(url + "/api/blogs")
   .then((res) => res.json())
   .then((output) => {
-    console.log("output", output);
+    //console.log("output", output);
     const max = output.length < 5 ? output.length : 5;
-    console.log("max", max);
+    //console.log("max", max);
     // for (let i = output.length; i < max; output.length--) {
 
     output.forEach((data) => {

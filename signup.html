@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <script
-      src="https://kit.fontawesome.com/8db6657193.js"
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -26,7 +22,7 @@
           <li><a href="blogs.html">Blogs</a></li>
           <li><a href="#Contact_Me">Contact Me</a></li> -->
           <li>
-            <a class="arrow_btnLogin" href="./signup.html"
+            <a class="arrow_btnLogin" href="./logIn.html"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="42"
@@ -37,7 +33,7 @@
                 <circle cx="18" cy="18" r="18" fill="#A6A001" />
               </svg>
               <div class="text">
-                <p>Login</p>
+                <p>Sign Up</p>
                 <p class="padding">
                   <svg
                     class="padding"
@@ -79,8 +75,8 @@
     </nav>
     <div class="all">
       <div class="login-container">
-        <h2>Login</h2>
-        <form class="login-form" id="form" name="form" method="post">
+        <h2>signUp</h2>
+        <form class="login-form" id="formsingUp" name="form" method="post">
           <div class="input-group">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M12,12A4,4 0 1,0 8,8A4,4 0 0,0 12,12Z" />
@@ -88,9 +84,24 @@
                 d="M12,14C9.33,14 4,15.34 4,18V20H20V18C20,15.34 14.67,14 12,14Z"
               />
             </svg>
-            <input type="text" placeholder="email" name="email" id="username" />
+
+            <input
+              type="text"
+              placeholder="username"
+              name="username"
+              id="signUpname"
+            />
           </div>
-          <div class="error" id="username-error"></div>
+          <div class="error" id="signUpname-error"></div>
+          <div class="input-group">
+            <input
+              type="email"
+              placeholder="email"
+              name="email"
+              id="signUpEmail"
+            />
+          </div>
+          <div class="error" id="signUpEmail-error"></div>
           <div class="input-group">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -108,20 +119,20 @@
               name="password"
               type="password"
               placeholder="Password"
-              id="password"
+              id="signUppassword"
             />
           </div>
-          <div class="error" id="password-error"></div>
-          <div class="checkbox-container">
+          <div class="error" id="signUppassword-error"></div>
+          <!-- <div class="checkbox-container">
             <a href="#">Forgot password</a>
-          </div>
-          <button type="submit">Login</button>
+          </div> -->
+          <button type="submit">signUp</button>
           <div class="sign-up-link">
-            Don't have an account? <a href="./signup.html">Sign up</a>
+            have an account? <a href="./logIn.html">log in</a>
           </div>
         </form>
       </div>
     </div>
-    <script src="./js/logIn.js"></script>
+    <script src="./js/signup.js"></script>
   </body>
 </html>
