@@ -105,11 +105,12 @@ fetch(url + `/api/blogs/${blogId}/comments`)
     let max = data.length < 4 ? data.length : 4;
     for (let i = 0; i < max; i++) {
       recent += `<p>${data[i].name}</p>
-    <br />
+
     <p>${data[i].email}</p>
     <p  class="border">
       ${data[i].content}
-    </p>`;
+    </p>
+    <br/>`;
     }
     comments.innerHTML = recent;
   });
@@ -202,18 +203,19 @@ if (formSingleBlog) {
   });
 }
 async function createComment() {
-  const data = new FormData();
-  data.append("name", nameSingleBlog.value);
-  data.append("email", emailSingleBlog.value);
-  data.append("content", messageSingleBlog.value);
+  const data = {
+    name: nameSingleBlog.value,
+    email: emailSingleBlog.value,
+    content: messageSingleBlog.value,
+  };
 
-  const response = await fetch(url + `/api/${blogId}/comments`, {
+  const response = await fetch(url + `/api/blogs/${blogId}/comments`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       name: nameSingleBlog.value,
       email: emailSingleBlog.value,
-      comment: messageSingleBlog.value,
+      content: messageSingleBlog.value,
     }),
   });
   if (!response.ok) {
@@ -221,5 +223,9 @@ async function createComment() {
   }
   const datas = await response.json();
   console.log(datas);
-  alert("comment sent successfully!!");
+  console.log("comment sent successfully!!");
+  messageErrorSingleBlog.innerHTML = "comment sent successfully!!";
+  nameSingleBlog.textContent === "";
+  messageSingleBlog.innerHTML === "";
+  emailSingleBlog.innerHTML === "";
 }

@@ -97,5 +97,5 @@ async function createBlog() {
   }
   const data = await response.json();
   alert("Blog created successfully!!");
-  window.location.href = "./createBlogs.html";
+  window.location.href = "./dashboard.html";
 }

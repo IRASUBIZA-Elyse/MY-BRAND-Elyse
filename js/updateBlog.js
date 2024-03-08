@@ -37,7 +37,7 @@ fetch(url + `/api/blogs/${blogId}`)
     //fileInput.value = output.image;
   });
 formUpdateBlog.addEventListener("submit", (e) => {
-  console.log("ok");
+  //console.log("ok");
   e.preventDefault();
   let isValid = true;
 
@@ -96,4 +96,6 @@ async function updateBlog() {
   }
   const data = await response.json();
   alert("Blog updated successfully!!");
+  location.reload();
+  window.location.href = "./adminBlogs.html";
 }
