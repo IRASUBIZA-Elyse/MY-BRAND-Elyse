@@ -177,7 +177,7 @@ form.addEventListener("submit", (e) => {
       .then((response) => response.json())
       .then((data) => {
         if (data.status === "sent") {
-          messageError.innerHTML = "sent";
+          alert("sent");
         }
       })
       .catch((err) => {
