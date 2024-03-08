@@ -158,30 +158,30 @@
       </div>
 
       <form class="recent-contacts" id="createBlogForm">
-        <h2 class="recent-contactsTitle">update blogs:</h2>
+        <h2 class="recent-contactsTitle">create blogs:</h2>
         <div class="update">
           <div class="update-image">
             <i class="fa-solid fa-cloud-arrow-up svgPhoto"></i>
-            <input type="file" accept="image/jpeg, image/png, image/jpg" id="image-file">
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="image-file" name="image">
           </div>
           <div>
             <div class="update-title">
               <input
                 type="text"
-                name=""
+                name="title"
                 id="createBlog-title"
                 placeholder="title ......"
                 class="name-input"
               />
               <div id="title-error" class="create-error error"></div>
-              <input type="text" name="" id="authorName" placeholder="author..." class="name-input">
-              <div id="author-error" class="create-error error"></div>
-              <input type="date" name="" id="Date" placeholder="date..." class="name-input">
-              <div id="date-error" class="create-error error"></div>
+              <!-- <input type="text" name="" id="authorName" placeholder="author..." class="name-input">
+              <div id="author-error" class="create-error error"></div> -->
+              <!-- <input type="date" name="" id="Date" placeholder="date..." class="name-input"> -->
+              <!-- <div id="date-error" class="create-error error"></div> -->
             </div>
 
             <div class="update-content">
-              <textarea  id="summernote" name="" cols="30" rows="10" class="createBlog-textarea"></textarea>
+              <textarea  id="summernote" name="content" cols="30" rows="10" class="createBlog-textarea"></textarea>
             </div>
             <div class="content-error"></div>
             

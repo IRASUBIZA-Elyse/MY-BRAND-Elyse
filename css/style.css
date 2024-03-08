@@ -185,7 +185,8 @@ html {
 /* about me */
 #About_Me {
   border: 1px solid rgba(180, 180, 180, 0);
-  background: linear-gradient(to right, #a6a1011f, #000);
+  box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(to right, #a6a10138, #000);
 }
 .aboutTitle {
   text-align: center;
@@ -359,7 +360,7 @@ svg.svgAboutMe {
   height: 50px;
   transform: rotate(-90deg);
   flex-shrink: 0;
-  color: #141313;
+  color: #2c2a2a;
   font-family: Poppins;
   font-size: 55px;
   font-style: normal;
@@ -527,7 +528,7 @@ svg.svgAboutMe {
 }
 .BLOGS {
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   padding: 50px;
   padding-top: 30px;
   color: #a6a001;
@@ -551,6 +552,7 @@ svg.svgAboutMe {
   height: 100%;
   object-fit: cover;
   padding-bottom: 50px;
+  border-radius: 10px;
 }
 .blogImg {
   width: auto;
@@ -715,6 +717,8 @@ ul {
 }
 .blogImage img {
   width: clamp(300px, 55%, 400px);
+  border-radius: 10px;
+  height: 200px;
 }
 .BlogContent {
   grid-area: 1/ 2/ 2/ -1;
@@ -750,6 +754,10 @@ ul {
 .singleBlog-image {
   grid-area: 1/ 1/ 2/ 2;
 }
+.singleBlog-image img {
+  width: 350px;
+  height: 250px;
+}
 .comment-section {
   grid-area: 2/ 1/ -1/ 2;
 }
@@ -779,6 +787,7 @@ ul {
   outline: none;
   border: 1px solid #a6a001;
   border-radius: 6px;
+  font-family: "Syne", sans-serif;
 }
 
 /* login page */
@@ -810,12 +819,13 @@ ul {
 }
 .input-group input {
   padding: 10px 10px 10px 40px;
-  width: 100%;
+  width: 250px;
   border: 1px solid #4b4b4b;
   border-radius: 10px;
   box-sizing: border-box;
   background-color: #4b4b4b;
   color: white;
+  outline: none;
 }
 .icon {
   position: absolute;
@@ -949,7 +959,13 @@ ul {
 .recent-contacts {
   margin: auto;
 }
-
+.recent-comment {
+  background-color: #1a1a00e1;
+  padding: 8px;
+}
+.border {
+  border: #000;
+}
 .recent-contactsTitle {
   margin-top: 20px;
   margin-left: 20px;
@@ -1070,7 +1086,8 @@ ul {
       margin-bottom: 50px;
     }
     .field .itemBlog {
-      width: 300px;
+      width: 83%;
+      margin: 12px 0px;
     }
   }
   @media screen and (max-width: 795px) {

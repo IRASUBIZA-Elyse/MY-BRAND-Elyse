@@ -1,23 +1,27 @@
 const containers = document.querySelector(".allBlogs");
-const Blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+const url = "https://my-brand-be-3ift.onrender.com";
 // console.log(Blogs);
 let allBlogshtml = "";
-let max = Blogs.length;
-for (let i = 0; i < max; i++) {
-  let length = 90;
-  let string = Blogs[i].content;
-  let result = addThreeDotsAfterLength(string, length);
-  function addThreeDotsAfterLength(string, length) {
-    return string.length > length ? string.slice(0, length) + "..." : string;
-  }
-  allBlogshtml += `<div class="container blogsBox" key=${Blogs[i].id}>
+fetch(url + "/api/blogs")
+  .then((res) => res.json())
+  .then((output) => {
+    for (let i = 0; i < output.length; i++) {
+      let length = 90;
+      let string = output[i].content;
+      let result = addThreeDotsAfterLength(string, length);
+      function addThreeDotsAfterLength(string, length) {
+        return string.length > length
+          ? string.slice(0, length) + "..."
+          : string;
+      }
+      allBlogshtml += `<div class="container blogsBox" key=${output[i]._id}>
 <div class="blogImage">
-<img src="${Blogs[i].img}" alt="blog images" />
+<img src="${output[i].image}" alt="blog images" />
 
 </div>
 <div class="BlogContent">
   <h2 class="blogHeading">
-    <span class="text_primary">${Blogs[i].title}</span>
+    <span class="text_primary">${output[i].title}</span>
   </h2>
   <p>
     ${result}
@@ -25,13 +29,13 @@ for (let i = 0; i < max; i++) {
   </p>
 </div>
 <div class="authorDate">
-  <p>Date: <span>10/2/2024</span> </p>
-  <p>Author:<span>${Blogs[i].author}</span> </p>
+  <p>Date: <span>${output[i].date}</span> </p>
+  <p>Author:<span>Henry</span> </p>
 </div>
 
 <div class="svgPosition svgForBlogs">
   <div class="feedback comment">
-    <p class="commentNumber">${Blogs[i].comment}</p>
+    <p class="commentNumber">${output[i].comment}</p>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="26"
@@ -46,7 +50,7 @@ for (let i = 0; i < max; i++) {
     </svg>
   </div>
   <div class="feedback likes">
-    <p class="likesNumber">${Blogs[i].likes}</p>
+    <p class="likesNumber">${output[i].likes}</p>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="26"
@@ -97,18 +101,20 @@ for (let i = 0; i < max; i++) {
 </div>
 </div>
 `;
-}
-// Blogs.forEach((blg) => {});
-containers.innerHTML = allBlogshtml;
+    }
+    containers.innerHTML = allBlogshtml;
 
-const blogs = document.querySelectorAll(".blogsBox");
-blogs.forEach((blg) => {
-  blg.addEventListener("click", (e) => {
-    const id = e.target.closest(".blogsBox").getAttribute("key");
-    console.log(id);
-    window.location.href = `./singleBlogPage.html?id=${id}`;
+    const blogs = document.querySelectorAll(".blogsBox");
+    blogs.forEach((blg) => {
+      blg.addEventListener("click", (e) => {
+        const id = e.target.closest(".blogsBox").getAttribute("key");
+        console.log(id);
+        window.location.href = `./singleBlogPage.html?id=${id}`;
+      });
+    });
+
+    // Blogs.forEach((blg) => {});
   });
-});
 
 // scroll effect
 window.addEventListener("scroll", function () {
