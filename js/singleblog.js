@@ -29,7 +29,7 @@ document.getElementById("menu-button").addEventListener("click", function () {
 const currentUrl = new URL(window.location.href);
 const searchParams = new URLSearchParams(currentUrl.search);
 const blogId = searchParams.get("id");
-console.log("blogId", blogId);
+//console.log("blogId", blogId);
 // if (formSingleBlog) {
 //   formSingleBlog.addEventListener("submit", (e) => {
 //     e.preventDefault();
@@ -92,9 +92,31 @@ fetch(url + `/api/blogs/${blogId}`)
     <p>Date: <span class="date">${output.date}</span></p>
     <p>Author: <span class="author">Henry</span></p>
     <br><br>
-    <div class="feedback likes"><p>${output.likes}</p><i class="fa-regular fa-thumbs-up"></i></div>`;
+    <div class="feedback likess"><p class="likeAll"></p><i class="fa-regular fa-thumbs-up"id ="singleLike">${output.likes}</i></div>`;
   })
   .catch((error) => console.error("There was a problem:", error));
+
+const countelement = document.getElementById("singleLike");
+const allblogs = "https://my-brand-be-3ift.onrender.com";
+likes.addEventListener("click", async function (event) {
+  const target = event.target;
+  console.log(target);
+  if (target.classList.contains("fa-regular")) {
+    console.log("blog already");
+    const blogId = searchParams.get("id");
+    const response = await fetch(
+      `https://my-brand-be-3ift.onrender.com/api/blogs/${blogId}/like`,
+
+      {
+        method: "POST",
+      }
+    );
+    const data = await response.json;
+    location.reload();
+    //console.log(data);
+    //countelement.innerHTML = 3;
+  }
+});
 
 const comments = document.querySelector(".recent-comment");
 let recent = "";
@@ -224,6 +246,7 @@ async function createComment() {
   const datas = await response.json();
   console.log(datas);
   console.log("comment sent successfully!!");
+  location.reload();
   messageErrorSingleBlog.innerHTML = "comment sent successfully!!";
   nameSingleBlog.textContent === "";
   messageSingleBlog.innerHTML === "";
