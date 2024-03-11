@@ -59,6 +59,7 @@ fetch(url + "/api/blogs")
       <td>
         ${result}
       </td>
+      
     </tr>
 `;
     });

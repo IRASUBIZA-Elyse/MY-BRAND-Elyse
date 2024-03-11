@@ -177,7 +177,7 @@ form.addEventListener("submit", (e) => {
       .then((response) => response.json())
       .then((output) => {
         if (output.message === "sent") {
-          console.log("sent");
+          messageError.innerHTML = "sent";
           location.reload();
         }
       })

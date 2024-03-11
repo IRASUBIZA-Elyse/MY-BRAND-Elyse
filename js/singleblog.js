@@ -102,7 +102,7 @@ likes.addEventListener("click", async function (event) {
   const target = event.target;
   console.log(target);
   if (target.classList.contains("fa-regular")) {
-    console.log("blog already");
+    //console.log("blog already");
     const blogId = searchParams.get("id");
     const response = await fetch(
       `https://my-brand-be-3ift.onrender.com/api/blogs/${blogId}/like`,
@@ -123,18 +123,22 @@ let recent = "";
 fetch(url + `/api/blogs/${blogId}/comments`)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
-    let max = data.length < 4 ? data.length : 4;
-    for (let i = 0; i < max; i++) {
-      recent += `<p>${data[i].name}</p>
-
-    <p>${data[i].email}</p>
-    <p  class="border">
-      ${data[i].content}
-    </p>
-    <br/>`;
+    console.log(data.length);
+    if (data.lenght == 0) {
+      comments.innerHTML = `<p>No comments yet</p>`;
+    } else {
+      let max = data.length < 4 ? data.length : 4;
+      for (let i = 0; i < max; i++) {
+        recent += `<p>${data[i].name}</p>
+  
+      <p>${data[i].email}</p>
+      <p  class="border">
+        ${data[i].content}
+      </p>
+      <br/>`;
+      }
+      comments.innerHTML = recent;
     }
-    comments.innerHTML = recent;
   });
 
 if (nameSingleBlog) {
@@ -246,9 +250,10 @@ async function createComment() {
   const datas = await response.json();
   console.log(datas);
   console.log("comment sent successfully!!");
-  location.reload();
+
   messageErrorSingleBlog.innerHTML = "comment sent successfully!!";
   nameSingleBlog.textContent === "";
   messageSingleBlog.innerHTML === "";
   emailSingleBlog.innerHTML === "";
+  location.reload();
 }
