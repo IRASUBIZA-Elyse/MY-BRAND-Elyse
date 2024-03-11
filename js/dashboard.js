@@ -65,3 +65,8 @@ fetch(url + "/api/blogs")
 
     recentBlog.innerHTML = recent;
   });
+const logout = document.querySelector(".logout");
+logout.addEventListener("click", () => {
+  localStorage.removeItem("token");
+  window.location.href = "./index.html";
+});

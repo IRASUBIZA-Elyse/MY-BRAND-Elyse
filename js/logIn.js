@@ -184,6 +184,7 @@ form.addEventListener("submit", (e) => {
     }
   }
 });
+
 // function uservalid() {
 //   var form = document.getElementById("login");
 //   var email = document.getElementById("logName").value;
