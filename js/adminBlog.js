@@ -69,8 +69,22 @@ fetch(url + "/api/blogs")
     blogsAdmin.addEventListener("click", (e) => {
       let target = e.target;
       if (target.classList.contains("deleteBlog")) {
-        //console.log("hii");
-        const id = target.closest(".blogsBox").getAttribute("key");
+        swal({
+          title: "Are you sure?",
+          text: "Once deleted, you will not be able to recover this imaginary file!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            swal("Poof! Your imaginary file has been deleted!", {
+              icon: "success",
+            });
+          } else {
+            swal("Your imaginary file is safe!");
+          }
+        })
+        .then(() => { const id = target.closest(".blogsBox").getAttribute("key");
         console.log("id: ", id);
         const url = "https://my-brand-be-3ift.onrender.com";
         fetch(url + `/api/blogs/${id}`, {
@@ -93,8 +107,10 @@ fetch(url + "/api/blogs")
           .catch((error) => console.error("Error deleting blog:", error));
       }
       //window.location.href = `./updateBlogs.html?id=${id}`;
-    });
-  });
+        )
+        //console.log("hii");
+        
+    
 
 // editButton.forEach((remove) => {
 //   remove.addEventListener("click", (e) => {

@@ -178,7 +178,11 @@ form.addEventListener("submit", (e) => {
       .then((output) => {
         if (output.message === "sent") {
           messageError.innerHTML = "sent";
-          location.reload();
+          swal("Success", "Message sent!", "success")
+            //alert("sent");
+            .then(() => {
+              location.reload(); // Reload the page after the user clicks OK
+            });
         }
       })
       .catch((err) => {
