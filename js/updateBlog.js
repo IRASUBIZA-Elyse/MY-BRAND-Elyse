@@ -99,3 +99,17 @@ async function updateBlog() {
   location.reload();
   window.location.href = "./adminBlogs.html";
 }
+function checkAuthentication() {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    // Redirect to login page if token is not present
+    window.location.href = "./logIn.html";
+  }
+}
+// Call checkAuthentication when the dashboard page loads
+window.addEventListener("DOMContentLoaded", () => {
+  //const token = localStorage.removeItem("token");
+  checkAuthentication();
+  //requireAuth;
+  //const token = localStorage.removeItem("token");
+});
