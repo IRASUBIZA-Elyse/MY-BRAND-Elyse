@@ -50,6 +50,7 @@ fetch(url + "/api/blogs")
   <div class="svgPosition buttonsAdmin">
   <div class="btnAdmin editingBlog">edit</div>
   <div class="btnAdmin deleteBlog">delete</div>
+  <div class="btnAdmin commentBlog">comment</div>
   </div>
   </div>`;
     });
@@ -68,49 +69,74 @@ fetch(url + "/api/blogs")
     });
     blogsAdmin.addEventListener("click", (e) => {
       let target = e.target;
+      if (target.classList.contains("commentBlog")) {
+        //console.log("hii");
+        const id = target.closest(".blogsBox").getAttribute("key");
+        window.location.href = `./commentsBlogs.html?id=${id}`;
+      }
+    });
+
+    blogsAdmin.addEventListener("click", (e) => {
+      let target = e.target;
       if (target.classList.contains("deleteBlog")) {
+        //console.log("hii");
+        const id = target.closest(".blogsBox").getAttribute("key");
+        //console.log("id: ", id);
+        const url = "https://my-brand-be-3ift.onrender.com";
         swal({
           title: "Are you sure?",
-          text: "Once deleted, you will not be able to recover this imaginary file!",
+          text: "Once deleted, you will not be able to recover the blog!",
           icon: "warning",
           buttons: true,
           dangerMode: true,
         }).then((willDelete) => {
           if (willDelete) {
-            swal("Poof! Your imaginary file has been deleted!", {
-              icon: "success",
-            });
+            fetch(url + `/api/blogs/${id}`, {
+              method: "DELETE",
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+              body: JSON.stringify(id),
+            })
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error("Network response was not ok");
+                }
+                return response.json();
+              })
+              .then((data) => {
+                swal("Blog deleted successfully").then((response) => {
+                  location.reload();
+                });
+                //alert("Blog deleted successfully!");
+              })
+              .catch((error) => console.error("Error deleting blog:", error));
           } else {
-            swal("Your imaginary file is safe!");
+            //console.log("Ok");
           }
-        })
-        .then(() => { const id = target.closest(".blogsBox").getAttribute("key");
-        console.log("id: ", id);
-        const url = "https://my-brand-be-3ift.onrender.com";
-        fetch(url + `/api/blogs/${id}`, {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify(id),
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            return response.json();
-          })
-          .then((data) => {
-            alert("Blog deleted successfully!");
-            location.reload();
-          })
-          .catch((error) => console.error("Error deleting blog:", error));
+        });
+        // fetch(url + `/api/blogs/${id}`, {
+        //   method: "DELETE",
+        //   headers: {
+        //     Authorization: `Bearer ${localStorage.getItem("token")}`,
+        //   },
+        //   body: JSON.stringify(id),
+        // })
+        //   .then((response) => {
+        //     if (!response.ok) {
+        //       throw new Error("Network response was not ok");
+        //     }
+        //     return response.json();
+        //   })
+        //   .then((data) => {
+        //     //alert("Blog deleted successfully!");
+        //     location.reload();
+        //   })
+        //   .catch((error) => console.error("Error deleting blog:", error));
       }
       //window.location.href = `./updateBlogs.html?id=${id}`;
-        )
-        //console.log("hii");
-        
-    
+    });
+  });
 
 // editButton.forEach((remove) => {
 //   remove.addEventListener("click", (e) => {

@@ -95,9 +95,18 @@ async function updateBlog() {
     throw new Error(response.statusText);
   }
   const data = await response.json();
-  alert("Blog updated successfully!!");
-  location.reload();
-  window.location.href = "./adminBlogs.html";
+  // alert("Blog updated successfully!!");
+  // location.reload();
+  // window.location.href = "./adminBlogs.html";
+  console.log(data);
+  if (data.message === "blog updated successfully") {
+    swal("Blog updated successfully")
+      //alert("sent");
+      .then(() => {
+        //location.reload(); // Reload the page after the user clicks OK
+        window.location.href = "./dashboard.html";
+      });
+  }
 }
 function checkAuthentication() {
   const token = localStorage.getItem("token");

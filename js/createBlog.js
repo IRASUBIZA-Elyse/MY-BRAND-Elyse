@@ -96,8 +96,17 @@ async function createBlog() {
     throw new Error(response.statusText);
   }
   const data = await response.json();
-  alert("Blog created successfully!!");
-  window.location.href = "./dashboard.html";
+  //swal("Hello world!");
+  console.log(data);
+  if (data.message === "Blog created successfully!!") {
+    swal("Blog created successfully")
+      //alert("sent");
+      .then(() => {
+        location.reload(); // Reload the page after the user clicks OK
+        //window.location.href = "./dashboard.html";
+      });
+  }
+  //alert("Blog created successfully!!");
 }
 function checkAuthentication() {
   const token = localStorage.getItem("token");

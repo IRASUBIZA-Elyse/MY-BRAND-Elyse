@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact dashboard</title>
+    <script
+      src="https://kit.fontawesome.com/8db6657193.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/admin.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo"></div>
+      <ul class="menu">
+        <li>
+          <a href="Dashboard.html"
+            ><i class="fa-solid fa-chart-line"></i><span>Dashboard</span></a
+          >
+        </li>
+        <li class="active">
+          <a href="contactsAdmin.html"
+            ><i class="fa-regular fa-address-card"></i><span>Contacts</span></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a
+          >
+        </li>
+        <li>
+          <a href="adminBlogs.html"
+            ><i class="fa-solid fa-blog"></i><span>Blogs</span></a
+          >
+        </li>
+        <li class="logout">
+          <a href="index.html"
+            ><i class="fa-solid fa-arrow-right-from-bracket"></i
+            ><span>Log out</span></a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <div class="header-wrapper">
+        <div class="header-title">
+          <h1 class="Logo">
+            <span class="text_primary">E</span>l<span class="text_primary"
+              >y</span
+            >s<span class="text_primary">e</span>
+            ir
+          </h1>
+        </div>
+        <div class="user-info">
+          <a class="arrow_btnLogin" href="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="42"
+              viewBox="0 0 42 42"
+              fill="none"
+            >
+              <circle cx="18" cy="18" r="18" fill="#A6A001" />
+            </svg>
+            <div class="text">
+              <p>Admin</p>
+              <p class="padding">
+                <i class="fa-solid fa-angle-right"></i>
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      
+      <div class="tabular-wrapperContacts">
+        <h3 class="main-title">Comments</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>comment</th>
+              </tr>
+
+               <tbody class="commentsAdmin">
+                <!-- <tr>
+                  <td>
+                    Alex MUga
+                  </td>
+                  <td>
+                    alexmuga@gmail.com
+                  </td>
+                  <td>
+                    We are proud to announce that Ignis has moved into a new space! After months of searching for the right place to showcase our clothing apparel, 
+                  </td>
+                </tr> -->
+               </tbody>
+            </thead>
+          </table>
+        </div> 
+      </div>
+    </div>
+    
+    <script src="./js/commentsAdmin.js"></script>
+  </body>
+</html>

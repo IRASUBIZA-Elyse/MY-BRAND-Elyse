@@ -164,9 +164,14 @@ form.addEventListener("submit", (e) => {
 
               const resData = response.data;
               localStorage.setItem("token", resData);
-              alert("logged in successfully");
-
-              window.location.href = "./dashboard.html";
+              if (response.status === true) {
+                //messageError.innerHTML = "sent";
+                swal("Success", "Login successful!", "success")
+                  //alert("sent");
+                  .then(() => {
+                    window.location.href = "./dashboard.html";
+                  });
+              }
             } else {
               // Login failed
               console.error("Login failed");

@@ -177,7 +177,7 @@ form.addEventListener("submit", (e) => {
       .then((response) => response.json())
       .then((output) => {
         if (output.message === "sent") {
-          messageError.innerHTML = "sent";
+          //messageError.innerHTML = "sent";
           swal("Success", "Message sent!", "success")
             //alert("sent");
             .then(() => {
