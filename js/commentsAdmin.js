@@ -34,23 +34,34 @@ queries.addEventListener("click", (e) => {
     const id = comments.closest("tr").getAttribute("key");
     console.log(id);
     const url = "https://my-brand-be-3ift.onrender.com";
-    fetch(url + `/api/blogs/${blogId}/comments/${id}`, {
-      method: "DELETE",
-      // headers: {
-      //   Authorization: `Bearer ${localStorage.getItem("token")}`,
-      // },
-      body: JSON.stringify(id),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        alert("comment deleted successfully!");
-        location.reload();
-      })
-      .catch((error) => console.error("Error deleting blog:", error));
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover the comment!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        fetch(url + `/api/blogs/${blogId}/comments/${id}`, {
+          method: "DELETE",
+          // headers: {
+          //   Authorization: `Bearer ${localStorage.getItem("token")}`,
+          // },
+          body: JSON.stringify(id),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            swal("comment deleted successfully").then((response) => {
+              location.reload();
+            });
+          })
+          .catch((error) => console.error("Error deleting blog:", error));
+      }
+    });
   }
 });

@@ -248,12 +248,7 @@ async function createComment() {
     throw new Error(response.statusText);
   }
   const datas = await response.json();
-  console.log(datas);
-  console.log("comment sent successfully!!");
-
-  messageErrorSingleBlog.innerHTML = "comment sent successfully!!";
-  nameSingleBlog.textContent === "";
-  messageSingleBlog.innerHTML === "";
-  emailSingleBlog.innerHTML === "";
-  location.reload();
+  swal("comment created succefully").then(() => {
+    location.reload();
+  });
 }

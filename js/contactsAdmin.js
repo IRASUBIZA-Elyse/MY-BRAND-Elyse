@@ -34,24 +34,36 @@ queries.addEventListener("click", (e) => {
     const id = query.closest("tr").getAttribute("key");
     console.log(id);
     const url = "https://my-brand-be-3ift.onrender.com";
-    fetch(url + `/api/queries/${id}`, {
-      method: "DELETE",
-      // headers: {
-      //   Authorization: `Bearer ${localStorage.getItem("token")}`,
-      // },
-      body: JSON.stringify(id),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        alert("query deleted successfully!");
-        location.reload();
-      })
-      .catch((error) => console.error("Error deleting blog:", error));
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover the query!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        fetch(url + `/api/queries/${id}`, {
+          method: "DELETE",
+          // headers: {
+          //   Authorization: `Bearer ${localStorage.getItem("token")}`,
+          // },
+          body: JSON.stringify(id),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            swal("query deleted successfully").then(() => {
+              location.reload();
+            });
+          })
+          .catch((error) => console.error("Error deleting blog:", error));
+      } else {
+      }
+    });
   }
   //console.log(query);
 });

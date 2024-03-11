@@ -52,75 +52,6 @@ if (email) {
     }
   });
 }
-// form.addEventListener("submit", (e) => {
-//   let isValid = true;
-//   let key = "henryPc";
-//   let email_check = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-//   console.log(password.value.trim() == "");
-
-//   // if (username.value.trim() === "" || username.value == null) {
-//   //   isValid = false;
-//   //   usernameError.innerHTML = "Username is required";
-//   // } else if (username.value.trim() === "henry") {
-//   //   usernameError.innerHTML = "";
-//   // } else {
-//   //   usernameError.innerHTML = "invalid username";
-//   // }
-
-//   if (email.value === "" || email.value == null) {
-//     isValid = false;
-//     emailError.innerHTML = "email is required";
-//   } else if (!email.value.match(email_check)) {
-//     isValid = false;
-//     emailError.innerHTML = "valid email is required";
-//   } else {
-//     emailError.innerHTML = "";
-//   }
-
-//   if (password.value.trim() === "" || password.value == null) {
-//     isValid = false;
-//     passwordError.innerHTML = "Password is required";
-//   } else {
-//     passwordError.innerHTML = "";
-//     isValid = true;
-//   }
-//   if (valid) {
-//     const inEmail = email.value.trim();
-//     const firstPass = password.value.trim();
-//     const body = { email: inEmail, password: firstPass };
-//     function loginUser(body) {
-//       const url = "https://my-brand-be-3ift.onrender.com";
-//       fetch(url + "/api/login", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(body),
-//       })
-//         .then((res) => res.json())
-//         .then((response) => {
-//           if (response.status) {
-//             // User logged in successfully
-//             console.log("User logged in successfully");
-//             alert("logged in successfully");
-//             const resData = response.data;
-//             localStorage.setItem("token", resData);
-//           } else {
-//             // Login failed
-//             console.error("Login failed");
-//             alert("oops invalid credentials!!!");
-//           }
-//         })
-//         .catch((error) => {
-//           console.error("Error:", error);
-//         });
-//     }
-//     loginUser(body);
-//     console.log("login successful");
-//     //window.location.href = "./dashboard.html";
-//   }
-// });
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -146,6 +77,7 @@ form.addEventListener("submit", (e) => {
       const firstPass = password.value.trim();
       const body = { email: inEmail, password: firstPass };
       function loginUser(body) {
+        form.disabled = true;
         // Assuming you're using fetch for API calls
         fetch("https://my-brand-be-3ift.onrender.com/api/login", {
           method: "POST",
@@ -166,7 +98,7 @@ form.addEventListener("submit", (e) => {
               localStorage.setItem("token", resData);
               if (response.status === true) {
                 //messageError.innerHTML = "sent";
-                swal("Success", "Login successful!", "success")
+                swal("Success", "Logged successfully!", "success")
                   //alert("sent");
                   .then(() => {
                     window.location.href = "./dashboard.html";

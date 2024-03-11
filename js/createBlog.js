@@ -82,7 +82,7 @@ async function createBlog() {
   formData.append("title", titles);
   formData.append("content", content.value);
   formData.append("image", fileInput.files[0]);
-
+  //formCreateBlog.disabled = true;
   const url = "https://my-brand-be-3ift.onrender.com";
 
   const response = await fetch(url + "/api/blogs", {

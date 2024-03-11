@@ -1,6 +1,36 @@
 const recentContact = document.querySelector(".contactTable");
-let queries = "";
 const url = "https://my-brand-be-3ift.onrender.com";
+
+// icons
+
+//comments
+let comments = document.querySelector(".commentsBox");
+fetch(url + "/api/comments")
+  .then((res) => res.json())
+  .then((output) => {
+    //console.log(output);
+    let number = output.length;
+    comments.innerHTML = `<i class="fa-sharp fa-solid fa-comments"></i>
+  <p class="sharesNumber">${number} Comments</p>`;
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+// blogs
+let blogs = document.querySelector(".allBlogs");
+fetch(url + "/api/blogs")
+  .then((response) => response.json())
+  .then((output) => {
+    let number = output.length;
+    blogs.innerHTML = `<i class="fa-solid fa-blog"></i>
+  <p class="sharesNumber">${number} Blogs</p>`;
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+//queries
+let queries = "";
+
 fetch(url + "/api/queries")
   .then((res) => res.json())
   .then((output) => {
@@ -26,6 +56,7 @@ fetch(url + "/api/queries")
     recentContact.innerHTML = queries;
   });
 
+//blogs
 const recentBlog = document.querySelector(".recentBlog");
 let recent = "";
 fetch(url + "/api/blogs")
