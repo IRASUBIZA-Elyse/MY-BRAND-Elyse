@@ -165,7 +165,7 @@ form.addEventListener("submit", (e) => {
       phoneNumber: phoneNumber.value,
       message: message.value,
     };
-    console.log(data);
+    //console.log(data);
     const url = "https://my-brand-be-3ift.onrender.com";
     fetch(url + "/api/queries", {
       method: "POST",
@@ -175,9 +175,10 @@ form.addEventListener("submit", (e) => {
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
-      .then((data) => {
-        if (data.status === "sent") {
+      .then((output) => {
+        if (output.message === "sent") {
           messageError.innerHTML = "sent";
+          location.reload();
         }
       })
       .catch((err) => {
