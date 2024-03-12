@@ -36,6 +36,8 @@ fetch(url + `/api/blogs/${blogId}`)
     content.value = output.content;
     //fileInput.value = output.image;
   });
+const loadingMessage = document.getElementById("loadingContent");
+
 formUpdateBlog.addEventListener("submit", (e) => {
   //console.log("ok");
   e.preventDefault();
@@ -55,6 +57,7 @@ formUpdateBlog.addEventListener("submit", (e) => {
   //   contentError.innerText = "";
   // }
   if (isValid) {
+    loadingMessage.style.display = "block";
     updateBlog();
   }
   // // const contentTags = content.value.replace(/<p>/g, "").replace(/<\/p>/g, "");
@@ -100,6 +103,7 @@ async function updateBlog() {
   // window.location.href = "./adminBlogs.html";
   console.log(data);
   if (data.message === "blog updated successfully") {
+    loadingMessage.style.display = "none";
     swal("Blog updated successfully")
       //alert("sent");
       .then(() => {

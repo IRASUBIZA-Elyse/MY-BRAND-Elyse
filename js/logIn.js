@@ -52,6 +52,7 @@ if (email) {
     }
   });
 }
+const loadingMessage = document.getElementById("loadingMessage");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -78,6 +79,7 @@ form.addEventListener("submit", (e) => {
       const body = { email: inEmail, password: firstPass };
       function loginUser(body) {
         form.disabled = true;
+        loadingMessage.style.display = "block";
         fetch("https://my-brand-be-3ift.onrender.com/api/login", {
           method: "POST",
           headers: {
@@ -87,8 +89,8 @@ form.addEventListener("submit", (e) => {
         })
           .then((res) => res.json())
           .then((response) => {
-            console.log(response);
-
+            //console.log(response);
+            loadingMessage.style.display = "none";
             if (response.status) {
               // User logged in successfully
               console.log("User logged in successfully");
@@ -105,8 +107,9 @@ form.addEventListener("submit", (e) => {
               }
             } else {
               // Login failed
+              loadingMessage.style.display = "none";
               console.error("Login failed");
-              alert("oops invalid credentials!!!");
+              swal("oops invalid credentials!!!");
             }
           })
           .catch((error) => {

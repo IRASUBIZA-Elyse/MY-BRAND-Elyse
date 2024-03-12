@@ -30,7 +30,7 @@ fileInput.addEventListener("change", (e) => {
 
   reader.readAsDataURL(file);
 });
-
+const loadingMessage = document.getElementById("loadingContent");
 formCreateBlog.addEventListener("submit", (e) => {
   e.preventDefault();
   e.stopPropagation();
@@ -63,6 +63,7 @@ formCreateBlog.addEventListener("submit", (e) => {
   // }
 
   if (isValid) {
+    loadingMessage.style.display = "block";
     createBlog();
   }
 });
@@ -99,6 +100,7 @@ async function createBlog() {
   //swal("Hello world!");
   console.log(data);
   if (data.message === "Blog created successfully!!") {
+    loadingMessage.style.display = "none";
     swal("Blog created successfully")
       //alert("sent");
       .then(() => {
