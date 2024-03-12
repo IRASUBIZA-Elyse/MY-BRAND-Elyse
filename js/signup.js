@@ -72,6 +72,8 @@ form.addEventListener("submit", (e) => {
   if (password.value.trim() === "" || password.value == null) {
     isValid = false;
     passwordError.innerHTML = "Password is required";
+  } else if (!password.value.trim().length > 9) {
+    passwordError.innerHTML = "Password must have at least 9 characters";
   } else {
     passwordError.innerHTML = "";
   }
@@ -79,19 +81,23 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
   } else {
     e.preventDefault();
-    signup();
+    const emailValue = email.value.trim();
+    console.log("email", emailValue);
+    const passwordValue = password.value.trim();
+    console.log("password", passwordValue);
+    const userNameValue = userName.value.trim();
+    console.log("username", userNameValue);
+    signup(emailValue, passwordValue, userNameValue);
   }
 });
 
-const emailValue = email.value.trim();
-const passwordValue = password.value.trim();
-const userNameValue = userName.value.trim();
-const body = {
-  email: emailValue,
-  password: passwordValue,
-  userName: userNameValue,
-};
-function signup() {
+function signup(Email, Password, UserName) {
+  const body = {
+    email: Email,
+    password: Password,
+    userName: UserName,
+  };
+  console.log(body);
   fetch("https://my-brand-be-3ift.onrender.com/api/signup", {
     method: "POST",
     headers: {
@@ -101,11 +107,20 @@ function signup() {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.status === "sent") {
-        console.log(data.message);
-      } else {
-        console.error("signup failed");
+        swal("Success", "signed up successfully!", "success")
+          //alert("sent");
+          .then(() => {
+            location.reload(); // Reload the page after the user clicks OK
+            //window.location.href = "./dashboard.html";
+          });
+      } else if (data.message === "User already exist") {
+        swal("User already exist")
+          //alert("sent");
+          .then(() => {
+            location.reload(); // Reload the page after the user clicks OK
+            //window.location.href = "./dashboard.html";
+          });
       }
     })
     .catch((error) => {

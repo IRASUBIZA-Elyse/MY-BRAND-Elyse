@@ -78,7 +78,6 @@ form.addEventListener("submit", (e) => {
       const body = { email: inEmail, password: firstPass };
       function loginUser(body) {
         form.disabled = true;
-        // Assuming you're using fetch for API calls
         fetch("https://my-brand-be-3ift.onrender.com/api/login", {
           method: "POST",
           headers: {

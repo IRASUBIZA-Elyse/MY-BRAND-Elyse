@@ -844,7 +844,11 @@ ul {
   margin-top: 20px;
 }
 .login-form button:hover {
-  background-color: #e6b800;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+.login-form button:disabled {
+  opacity: 0.5; 
+  cursor: not-allowed; /
 }
 .check {
   margin-right: 20px;
