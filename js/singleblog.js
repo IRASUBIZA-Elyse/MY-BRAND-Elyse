@@ -84,13 +84,16 @@ const url = "https://my-brand-be-3ift.onrender.com";
 fetch(url + `/api/blogs/${blogId}`)
   .then((res) => res.json())
   .then((output) => {
-    console.log(output.content);
-    console.log("output", output.title);
+    //console.log(output.content);
+    //console.log("output", output.title);
+
     titleBlog.innerHTML = `
-    <span class="text_primary"><${output.title}/span>
+    ${output.title}
   `;
+    //console.log(titleBlog.innerHTML);
     image.innerHTML = `<img src="${output.image}" alt="blog image" />`;
-    likes.innerHTML = `<p class="blog-text">
+    likes.innerHTML = ` 
+    <p class="blog-text">
     ${output.content}
   </p>
   <div class="authorDate">

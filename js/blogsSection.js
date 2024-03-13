@@ -8,7 +8,7 @@ fetch(sameBlogsUrl + "/api/blogs")
     let blogshtml = "";
     const max = output.length < 3 ? output.length : 3;
     for (let i = 0; i < max; i++) {
-      let length = 200;
+      let length = 100;
       let string = output[i].content;
       let result = addThreeDotsAfterLength(string, length);
       function addThreeDotsAfterLength(string, length) {
