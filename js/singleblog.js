@@ -76,6 +76,7 @@ const blogId = searchParams.get("id");
 //     }
 //   });
 // }
+const titleBlog = document.querySelector(".BLOGS");
 const single = document.querySelector(".singleBlog");
 const image = document.querySelector(".singleBlog-image");
 const likes = document.querySelector(".column2");
@@ -83,7 +84,11 @@ const url = "https://my-brand-be-3ift.onrender.com";
 fetch(url + `/api/blogs/${blogId}`)
   .then((res) => res.json())
   .then((output) => {
-    //console.log("output", output);
+    console.log(output.content);
+    console.log("output", output.title);
+    titleBlog.innerHTML = `
+    <span class="text_primary"><${output.title}/span>
+  `;
     image.innerHTML = `<img src="${output.image}" alt="blog image" />`;
     likes.innerHTML = `<p class="blog-text">
     ${output.content}
