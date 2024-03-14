@@ -92,7 +92,7 @@ fetch(url + `/api/blogs/${blogId}`)
   `;
     //console.log(titleBlog.innerHTML);
     image.innerHTML = `<img src="${output.image}" alt="blog image" />`;
-    likes.innerHTML = ` 
+    likes.innerHTML = `
     <p class="blog-text">
     ${output.content}
   </p>
@@ -138,7 +138,7 @@ fetch(url + `/api/blogs/${blogId}/comments`)
       let max = data.length < 4 ? data.length : 4;
       for (let i = 0; i < max; i++) {
         recent += `<p>${data[i].name}</p>
-  
+
       <p>${data[i].email}</p>
       <p  class="border">
         ${data[i].content}
