@@ -78,8 +78,8 @@ formUpdateBlog.addEventListener("submit", (e) => {
   //windows.location.href = "./adminBlogs.html";
 });
 async function updateBlog() {
-  const contentTags = content.value.replace(/<p>/g, "").replace(/<\/p>/g, "");
-  const contents = contentTags;
+  //const contentTags = content.value.replace(/<p>/g, "").replace(/<\/p>/g, "");
+  const contents = content.value;
   const titles = title.value;
   if (!fileInput.files || !fileInput.files[0]) {
     console.error("Please select image");
