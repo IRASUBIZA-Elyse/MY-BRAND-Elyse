@@ -132,8 +132,10 @@ fetch(url + `/api/blogs/${blogId}/comments`)
   .then((response) => response.json())
   .then((data) => {
     console.log(data.length);
-    if (data.lenght == 0) {
-      comments.innerHTML = `<p>No comments yet</p>`;
+    if (data.length == 0) {
+      console.log(comments);
+      comments.innerHTML = `No comments yet`;
+      console.log(comments.innerHTML);
     } else {
       let max = data.length < 4 ? data.length : 4;
       for (let i = 0; i < max; i++) {
