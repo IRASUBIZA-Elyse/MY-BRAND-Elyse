@@ -98,7 +98,7 @@ fetch(url + `/api/blogs/${blogId}`)
   </p>
   <div class="authorDate">
     <p>Date: <span class="date">${output.date}</span></p>
-    <p>Author: <span class="author">Henry</span></p>
+    <p>Author: <span class="author">Elyse IRASUBIZA</span></p>
     <br><br>
     <div class="feedback likess"><p class="likeAll"></p><i class="fa-regular fa-thumbs-up"id ="singleLike">${output.likes}</i></div>`;
   })
