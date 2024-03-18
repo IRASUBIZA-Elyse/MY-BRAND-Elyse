@@ -182,9 +182,9 @@ if (messageSingleBlog) {
   messageSingleBlog.addEventListener("keyup", (e) => {
     if (messageSingleBlog.value === "" || messageSingleBlog.value == null) {
       messageErrorSingleBlog.innerHTML = "";
-    } else if (messageSingleBlog.value.length < 10) {
+    } else if (messageSingleBlog.value.length < 5) {
       messageErrorSingleBlog.innerHTML =
-        "Your message should be at least 10 characters";
+        "Your message should be at least 5 characters";
     } else {
       messageErrorSingleBlog.innerHTML = "";
     }
