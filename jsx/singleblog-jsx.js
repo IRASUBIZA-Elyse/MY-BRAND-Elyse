@@ -1,6 +1,10 @@
 const { useState, useEffect } = React;
 //import "../css/style";
-
+const Loader = () => (
+  <div className="loader-container">
+    <div className="loader"></div>
+  </div>
+);
 function SingleBlog() {
   const [blog, setBlog] = useState({});
   const [comments, setComments] = useState([]);
@@ -17,12 +21,14 @@ function SingleBlog() {
       dangerouslySetInnerHTML: { __html: htmlContent },
     });
   };
-  useEffect(() => {
-    setIsLoading(true);
+  const getId = () => {
     const currentUrl = new URL(window.location.href);
     const searchParams = new URLSearchParams(currentUrl.search);
     const blogId = searchParams.get("id");
     console.log(blogId);
+    return blogId;
+  };
+  const getBlog = (blogId) => {
     fetch(`https://my-brand-be-3ift.onrender.com/api/blogs/${blogId}`)
       .then((res) => res.json())
       .then((output) => {
@@ -33,13 +39,47 @@ function SingleBlog() {
       .finally(() => {
         setIsLoading(false);
       });
-
+  };
+  const getComment = (blogId) => {
     fetch(`https://my-brand-be-3ift.onrender.com/api/blogs/${blogId}/comments`)
       .then((response) => response.json())
       .then((data) => {
         setComments(data);
       });
+  };
+
+  useEffect(() => {
+    setIsLoading(true);
+    const currentUrl = new URL(window.location.href);
+    const searchParams = new URLSearchParams(currentUrl.search);
+    const id = searchParams.get("id");
+    if (id) {
+      getComment(id);
+      getBlog(id);
+      getId(id);
+    }
   }, []);
+  // const currentUrl = new URL(window.location.href);
+  // const searchParams = new URLSearchParams(currentUrl.search);
+  // const blogId = searchParams.get("id");
+  // console.log(blogId);
+  // fetch(`https://my-brand-be-3ift.onrender.com/api/blogs/${blogId}`)
+  //   .then((res) => res.json())
+  //   .then((output) => {
+  //     setBlog(output);
+  //     setLike(output.likes);
+  //   })
+  //   .catch((error) => console.error("There was a problem:", error))
+  //   .finally(() => {
+  //     setIsLoading(false);
+  //   });
+
+  // fetch(`https://my-brand-be-3ift.onrender.com/api/blogs/${blogId}/comments`)
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     setComments(data);
+  //   });
+  // }, []);
 
   const currentUrl = new URL(window.location.href);
   const searchParams = new URLSearchParams(currentUrl.search);
@@ -53,7 +93,7 @@ function SingleBlog() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.likes);
+        //console.log(data.likes);
         setLike(data.likes);
       })
       .catch((error) => console.error("There was a problem:", error));
@@ -108,9 +148,7 @@ function SingleBlog() {
           throw new Error(response.statusText);
         }
         swal("Comment created successfully").then(() => {
-          setName("");
-          setComments("");
-          setEmail("");
+          location.reload();
         });
       } catch (error) {
         console.error("Error creating comment:", error);
@@ -120,10 +158,9 @@ function SingleBlog() {
 
   return (
     <>
+      <div className="singleBlog"></div>
       {isLoading ? ( // Conditional rendering of loading indicator
-        <div className="loader-container">
-          <div className="loader"></div>
-        </div>
+        <Loader />
       ) : (
         <div>
           <div className="titleSingleBlog">
