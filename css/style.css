@@ -754,7 +754,7 @@ ul {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
   /* flex-wrap: wrap; */
   gap: 25px;
 }

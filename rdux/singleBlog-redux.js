@@ -1,50 +1,72 @@
+const { Provider, useDispatch, useSelector } = ReactRedux;
 const { useState, useEffect } = React;
-//import "../css/style";
+const Loader = () => (
+  <div className="loader-container">
+    <div className="loader"></div>
+  </div>
+);
+const initialState = {
+  blog: {},
+  isLoading: true,
+  comments: [],
+  like: "",
+};
+
+function reducer(state = initialState, action) {
+  switch (action.type) {
+    case "SET_BLOG":
+      return { ...state, blog: action.payload };
+    case "SET_IS_LOADING":
+      return { ...state, isLoading: action.payload };
+    case "SET_COMMENTS":
+      return { ...state, comments: action.payload };
+    case "SET_LIKE":
+      return { ...state, like: action.payload };
+    default:
+      return state;
+  }
+}
+
+const store = Redux.createStore(reducer);
 
 function SingleBlog() {
-  const [blog, setBlog] = useState({});
-  const [comments, setComments] = useState([]);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [messageError, setMessageError] = useState("");
-  const [like, setLike] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const renderHtmlContent = (htmlContent) => {
     return React.createElement("div", {
       dangerouslySetInnerHTML: { __html: htmlContent },
     });
   };
-  useEffect(() => {
-    setIsLoading(true);
-    const currentUrl = new URL(window.location.href);
-    const searchParams = new URLSearchParams(currentUrl.search);
-    const blogId = searchParams.get("id");
-    console.log(blogId);
+  const dispatch = useDispatch();
+  const blog = useSelector((state) => state.blog);
+  const comments = useSelector((state) => state.comments);
+  const like = useSelector((state) => state.like);
+  const isLoading = useSelector((state) => state.isLoading);
+
+  const getBlog = (blogId) => {
     fetch(`https://my-brand-be-3ift.onrender.com/api/blogs/${blogId}`)
       .then((res) => res.json())
       .then((output) => {
-        setBlog(output);
-        setLike(output.likes);
+        dispatch({ type: "SET_BLOG", payload: output });
       })
       .catch((error) => console.error("There was a problem:", error))
       .finally(() => {
-        setIsLoading(false);
+        dispatch({ type: "SET_IS_LOADING", payload: false });
       });
-
+  };
+  const getComments = (blogId) => {
     fetch(`https://my-brand-be-3ift.onrender.com/api/blogs/${blogId}/comments`)
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
-        setComments(data);
-      });
-  }, []);
+        dispatch({ type: "SET_COMMENTS", payload: data });
+      })
+      .catch((error) => console.error("There was a problem:", error));
+  };
 
-  const currentUrl = new URL(window.location.href);
-  const searchParams = new URLSearchParams(currentUrl.search);
-  const blogId = searchParams.get("id");
-  const handleLike = () => {
+  const likeBlog = (blogId) => {
     fetch(`https://my-brand-be-3ift.onrender.com/api/blogs/${blogId}/like`, {
       method: "POST",
       headers: {
@@ -53,77 +75,76 @@ function SingleBlog() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.likes);
-        setLike(data.likes);
+        dispatch({ type: "SET_LIKE", payload: data.likes });
       })
       .catch((error) => console.error("There was a problem:", error));
   };
+  const handleLike = () => {
+    const currentUrl = new URL(window.location.href);
+    const searchParams = new URLSearchParams(currentUrl.search);
+    const blogId = searchParams.get("id");
+    dispatch(likeBlog(blogId));
+  };
 
-  const handleCommentSubmit = async (e, blogId) => {
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let isValid = true;
-    let email_checkSingleBlog = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Validation logic
-    if (name === "") {
-      setNameError("Name is required");
-      isValid = false;
-    } else {
-      setNameError("");
-    }
-    if (email === "") {
-      setEmailError("Email is required");
-    } else if (!email.match(email_checkSingleBlog)) {
-      setEmailError("Enter a valid email");
-      isValid = false;
-    } else {
-      setEmailError("");
-    }
-    if (message === "" || message == null) {
-      setMessageError("Enter your message");
-      isValid = false;
-    } else if (message.length < 3) {
-      setMessageError("Please enter a message of atleast 3 characters");
-      isValid = false;
-    } else {
-      setMessageError("");
-    }
+    const currentUrl = new URL(window.location.href);
+    const searchParams = new URLSearchParams(currentUrl.search);
+    const blogId = searchParams.get("id");
+
+    // logic
 
     if (isValid) {
-      try {
-        const currentUrl = new URL(window.location.href);
-        const searchParams = new URLSearchParams(currentUrl.search);
-        const blogId = searchParams.get("id");
-        const response = await fetch(
-          `https://my-brand-be-3ift.onrender.com/api/blogs/${blogId}/comments`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ name, email, content: message }),
-          }
-        );
-        if (!response.ok) {
-          throw new Error(response.statusText);
+      const newComment = {
+        name: formData.name,
+        email: formData.email,
+        content: formData.message,
+      };
+      const response = await fetch(
+        `https://my-brand-be-3ift.onrender.com/api/blogs/${blogId}/comments`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newComment),
         }
-        swal("Comment created successfully").then(() => {
-          setName("");
-          setComments("");
-          setEmail("");
-        });
-      } catch (error) {
-        console.error("Error creating comment:", error);
+      );
+
+      if (!response.ok) {
+        throw new Error(response.statusText);
       }
+
+      const responseData = await response.json();
+      swal("Success", "Comment created successfully", "success").then(() => {
+        location.reload();
+      });
+    } else {
     }
   };
 
+  useEffect(() => {
+    const currentUrl = new URL(window.location.href);
+    const searchParams = new URLSearchParams(currentUrl.search);
+    const id = searchParams.get("id");
+    if (id) {
+      getBlog(id);
+      getComments(id);
+    }
+  }, []);
+
   return (
     <>
+      <div className="singleBlog"></div>
       {isLoading ? ( // Conditional rendering of loading indicator
-        <div className="loader-container">
-          <div className="loader"></div>
-        </div>
+        <Loader />
       ) : (
         <div>
           <div className="titleSingleBlog">
@@ -153,6 +174,7 @@ function SingleBlog() {
                     id="singleLike"
                     onClick={handleLike}
                   >
+                    {/* {blog.likes} */}
                     {like}
                   </i>
                 </div>
@@ -161,7 +183,7 @@ function SingleBlog() {
             <div className="comment-section">
               <div className="commentRetrived">
                 <p>
-                  <span class="text_primary">Comments</span>
+                  <span class="text_primary">Comments</span>{" "}
                 </p>
                 <div className="recent-comment">
                   <div className="CMT">
@@ -169,7 +191,7 @@ function SingleBlog() {
                       <p>No comments yet</p>
                     ) : (
                       comments.map((comment) => (
-                        <div key={comment.id}>
+                        <div key={comment._id}>
                           <p>{comment.name}</p>
                           <p>{comment.email}</p>
                           <p className="border">{comment.content}</p>
@@ -184,22 +206,19 @@ function SingleBlog() {
                 <p>
                   <span className="text_primary">leave a comment:</span>
                 </p>
-                <form
-                  className="form-SingleBlog"
-                  onSubmit={handleCommentSubmit}
-                >
+                <form className="form-SingleBlog" onSubmit={handleSubmit}>
                   <div className="input-blogs">
                     <div className="input-field field">
                       <input
-                        type="text"
+                        type="name"
                         className="itemBlog"
                         id="name-SingleBlog"
-                        value={name}
+                        name="name"
                         placeholder="name"
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={handleChange}
                       />
                       <div id="name-errorSingleBlog" className="error">
-                        {nameError}
+                        {/* {errors.name} */}
                       </div>
                     </div>
                     <div className="input-field field">
@@ -207,24 +226,24 @@ function SingleBlog() {
                         type="email"
                         id="email-SingleBlog"
                         className="itemBlog"
-                        value={email}
+                        name="email"
                         placeholder="email"
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={handleChange}
                       />
                       <div id="email-errorSingleBlog" className="error">
-                        {emailError}
+                        {/* {errors.email} */}
                       </div>
                     </div>
                   </div>
-                  <div class="textarea-field field">
+                  <div className="textarea-field field">
                     <textarea
                       className="itemMessage-blogs"
                       id="message-SingleBlog"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
+                      name="message"
+                      onChange={handleChange}
                     ></textarea>
-                    <div id="message-errorSingleBlog" class="message-error">
-                      {messageError}
+                    <div id="message-errorSingleBlog" className="message-error">
+                      {/* {errors.message} */}
                     </div>
                   </div>
                   <button className="submitbtn" type="submit">
@@ -240,4 +259,14 @@ function SingleBlog() {
   );
 }
 
-ReactDOM.render(<SingleBlog />, document.querySelector(".singleBlog"));
+ReactDOM.render(
+  <Provider store={store}>
+    <SingleBlog />
+  </Provider>,
+  document.querySelector(".singleBlog")
+);
+document.getElementById("menu-button").addEventListener("click", function () {
+  var navList = document.querySelector("#navbar ul");
+  navList.style.display = navList.style.display === "block" ? "none" : "block";
+  navList.style.width = navList.style.width === "100%" ? "0" : "100%";
+});
