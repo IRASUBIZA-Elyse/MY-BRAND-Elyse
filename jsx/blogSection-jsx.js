@@ -1,6 +1,10 @@
 // app.js
 const { useEffect, useState } = React;
-
+const Loader = () => (
+  <div className="loader-container">
+    <div className="loader"></div>
+  </div>
+);
 function Blog({ id, image, title, content, likes }) {
   const renderHtmlContent = (htmlContent) => {
     return React.createElement("div", {
@@ -70,6 +74,7 @@ function Blog({ id, image, title, content, likes }) {
 
 function App() {
   const [blogs, setBlogs] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const sameBlogsUrl = "https://my-brand-be-3ift.onrender.com";
@@ -77,21 +82,31 @@ function App() {
       .then((res) => res.json())
       .then((output) => {
         setBlogs(output.slice(0, 3));
+      })
+      .catch((error) => console.error("Error fetching blogs:", error))
+      .finally(() => {
+        setIsLoading(false); // Set loading to false after fetching data
       });
   }, []);
 
   return (
     <div className="blogs">
-      {blogs.map((blog) => (
-        <Blog
-          key={blog._id}
-          id={blog._id}
-          image={blog.image}
-          title={blog.title}
-          content={blog.content}
-          likes={blog.likes}
-        />
-      ))}
+      {isLoading ? (
+        // Render loader while data is being fetched
+        <Loader />
+      ) : (
+        // Render blogs once data is fetched
+        blogs.map((blog) => (
+          <Blog
+            key={blog._id}
+            id={blog._id}
+            image={blog.image}
+            title={blog.title}
+            content={blog.content}
+            likes={blog.likes}
+          />
+        ))
+      )}
     </div>
   );
 }

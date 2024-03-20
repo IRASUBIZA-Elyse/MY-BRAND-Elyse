@@ -9,7 +9,14 @@
       src="https://kit.fontawesome.com/8db6657193.js"
       crossorigin="anonymous"
     ></script>
-    
+   <!-- React CDN -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+   
+   <!-- Redux CDN -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.0/redux.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/7.2.5/react-redux.min.js"></script>
+   
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
@@ -79,9 +86,6 @@
         </div>
       </div>
     </nav>
-    <div class="loader-container">
-      <div class="loader"></div>
-    </div>
     <div class="container singleBlog">
       <div class="titleSingleBlog">
         <div class="BLOGS">
@@ -141,7 +145,7 @@
           <div class="comment-section">
             
               <div class="commentRetrived">
-                <p><span class="text_primary">Comments</span></p>
+                <!-- <p><span class="text_primary">Comments</span></p> -->
   
               <div class="recent-comment">
                 <!-- <p>Syed Zubaear</p>
@@ -160,7 +164,7 @@
 
             <div class="leaveA-comment">
               <p><span class="text_primary">leave a comment:</span></p>
-              <!-- <form action="#" id="form-SingleBlog">
+             <form action="#" id="form-SingleBlog">
                 <div class="input-blogs">
                   <div class="input-field field">
                     <input
@@ -196,7 +200,7 @@
                   <div class="message-error" id="message-errorSingleBlog"></div>
                 </div>
                 <button class="submitbtn" type="submit">Submit</button>
-              </form> -->
+              </form>
             </div>
           </div> 
       </div> 
@@ -359,18 +363,20 @@
       </div>
     </footer>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script
+    <!-- <script
       crossorigin
       src="https://unpkg.com/react@18/umd/react.production.min.js"
     ></script>
     <script
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
-    ></script>
+    ></script> -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- <script src="./js/singleblog.js"></script> -->
     <!-- <script type="text/babel" src="./jsx/singleblog-jsxTrial.js" ></script> -->
-    <script type="text/babel" src="./jsx/singleblog-jsx.js" ></script>
+    <!-- <script type="text/babel" src="./jsx/singleblog-jsx.js" ></script> -->
+    <script type="text/babel" src="./rdux/singleBlog-redux.js" ></script>
+
     <!-- <script src="./js/main.js"></script> -->
   </body>
 </html>
